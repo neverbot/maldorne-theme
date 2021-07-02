@@ -1,7 +1,9 @@
-<h1 align="center"><a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic Theme</a></h1>
+# Maldorne Theme
+
+Based on the [Chic Template](https://github.com/Siricee/hexo-theme-Chic) by [@Siricee](https://github.com/Siricee).
 
 <p align="center">
-<img src="https://i.loli.net/2019/06/12/5d006bd289aa325037.png" alt="Chic theme">
+![](screenshot.png)
 </p>
 
 > Chic, French word means 'Elegant' in English.
