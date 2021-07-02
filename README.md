@@ -1,19 +1,18 @@
+<p align="center">
+  <img width="800" alt="screenshot" src="/screenshot.png">
+</p>
+
 # Maldorne Theme
 
 Based on the [Chic Template](https://github.com/Siricee/hexo-theme-Chic) by [@Siricee](https://github.com/Siricee).
 
-<p align="center">
-  <img width="500" alt="screenshot" src="/screenshot.png">
-</p>
-
 > Chic, French word means 'Elegant' in English.
 
 <p align="center">
-<img alt="Author" src="https://img.shields.io/badge/Author-Sirice-blue.svg"/>
-<img alt="node.js" src="https://img.shields.io/badge/node.js-6.0%2B-43853d.svg?style=flat-square"/>
+<img alt="Author" src="https://img.shields.io/badge/Author-neverbot-blue.svg"/>
+<img alt="Author" src="https://img.shields.io/badge/Author-siricee-blue.svg"/>
 <img alt="Hexo" src="https://img.shields.io/badge/hexo-3.0+-0e83cd.svg?style=flat-square"/>
 <img alt="Build Status" src="https://img.shields.io/badge/device-responsive-orange.svg"/>
-<img alt="Build Status" src="https://img.shields.io/travis/viosey/hexo-theme-material.svg?style=flat-square"/>
 </p>
 
 ## Doc language
@@ -45,24 +44,21 @@ An elegant, powerful, easy-to-read Hexo theme.
 
 ## Features
 - Appropriate blank blocks, elegant but not simple.
-
 - Light/Dark theme，just one click.
-
 - Abundant highlight mode.
-
-- elaborately selected fonts, best reading experience. \* *'Microsoft Jhenghei' especially recommended.*
-
+- Elaborately selected fonts, best reading experience. \* *'Microsoft Jhenghei' especially recommended.*
 - Auto fit Mobile and Screen responsively.
-
 - Support MathJax, Support Formula written in LaTeX.
 
 ## Installation
 
 ```bash
 cd your-blog/themes
-git clone https://github.com/Siricee/hexo-theme-Chic.git Chic
-// Modify theme setting in _config.yml to Chic.
+git clone https://github.com/neverbot/maldorne-theme.git maldorne
 ```
+- Modify theme setting in `_config.yml` to `maldorne`.
+- You can change the theme language in `themes/maldorne/_config.yml` in the `i18n/language` setting. 
+
 
 ## Configuration
 <details>
@@ -70,33 +66,56 @@ git clone https://github.com/Siricee/hexo-theme-Chic.git Chic
 
 ```yaml
 # Header
-navname: Bentham's Blog
+navname: House of Maldorne
 
-# navigatior items
+# navigator items
 nav:
-  Posts: /archives
-  Categories: /category
-  Tags: /tag
-  About: /about
+  - blog: 
+    name: nav.blog 
+    url: /archives
+  - games: 
+    name: nav.games
+    url: /games
+  - play: 
+    name: nav.play
+    url: /play
+  - about:
+    name: nav.about
+    url: /about
 
-# favicon
-favicon: /favicon.ico
+# favicons
+icons: true
 
 # Profile
-nickname: Jeremy Bentham
+avatar: /image/maldorne_old_logo.png
 
-### this variable is MarkDown form.
-description: Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** <br>Fusce eget urna vitae velit *eleifend interdum at ac* nisi.
-avatar: /image/avatar.jpeg
+i18n:
+  language: en
 
 # main menu navigation
-## links key words should not be changed.
-## Complete url after key words.
-## Unused key can be commented out.
+## link is the complete url
+## icon is the fontawesome icon name
+## prefix is the fontawesome style
+## Unused keys can be commented out.
 links:
-  Blog: /archives
+  Blog: 
+    link: /archives
+    icon: book-open
+    prefix: fas
+  Twitter: 
+    link: https://twitter.com/houseofmaldorne
+    icon: twitter
+    prefix: fab
+  LinkedIn: 
+    link: https://www.linkedin.com/company/11107294
+    icon: linkedin
+    prefix: fab
+  Github: 
+    link: https://github.com/houseofmaldorne/
+    icon: github
+    prefix: fab
 #  Category:
-#  Tags:
+#  Tags: 
 #  Link:
 #  Resume:
 #  Publish:
@@ -104,23 +123,20 @@ links:
 #  Gallary:
 #  RSS:
 #  AliPay:
-  ZhiHu: https://www.zhihu.com/people/sirice
-#  LinkedIn:
+#  ZhiHu: 
 #  FaceBook:
-#  Twitter:
 #  Skype:
 #  CodeSandBox:
 #  CodePen:
 #  Sketch:
 #  Gitlab:
 #  Dribble:
-  Instagram:
-  Reddit:
+#  Instagram:
+#  Reddit:
 #  YouTube:
 #  QQ:
 #  Weibo:
 #  WeChat:
-  Github: https://github.com/Siricee
 
 # how links show: you have 2 choice--text or icon.
 links_text_enable: false
@@ -138,12 +154,13 @@ post_copyright_enable: true
 
 post_copyright_author_enable: true
 post_copyright_permalink_enable: true
-post_copyright_license_enable: true
-post_copyright_license_text: Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE
-post_copyright_slogan_enable: true
-post_copyright_slogan_text: Do you believe in <strong>DESTINY<strong>?
+post_copyright_license_enable: false
+post_copyright_license_text: Copyright (c) 2021 House of Maldorne
+post_copyright_slogan_enable: false
+
 ## toc
 post_toc_enable: true
+page_toc_enable: true
 
 # Page
 page_title_enable: true
@@ -153,7 +170,7 @@ page_title_enable: true
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: MMMM D, YYYY
-time_format: H:mm:ss
+time_format: HH:mm:ss
 
 # stylesheets loaded in the <head>
 stylesheets:
@@ -166,7 +183,6 @@ scripts:
     # tscanlin/tocbot: Build a table of contents from headings in an HTML document.
     # https://github.com/tscanlin/tocbot
 
-
 # plugin functions
 ## Mathjax: Math Formula Support
 ## https://www.mathjax.org
@@ -175,6 +191,7 @@ mathjax:
   import: demand # global or demand
   ## global: all pages will load mathjax,this will degrade performance and some grammers may be parsed wrong.
   ## demand: Recommend option,if your post need fomula, you can declare 'mathjax: true' in Front-matter
+
 ```
 </details>
 <br>
@@ -229,9 +246,6 @@ mathjax:
     ---
     ```
 LaTeX grammers will not be illustrated in this doc. In Chic theme, Single '$' rounded statement is regarded as inline formula like `$f(x)=ax+b$` ; Double '$' rounded statement is regarded as block formula like `$$f(x)=ax+b$$`.More information please read LaTeX doc and [Formula test page in Demo Site](https://siricee.github.io/hexo-theme-Chic/2019/07/05/MathJax_test/).
-
-
-
 
 ## Customize
 
