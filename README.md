@@ -3,7 +3,7 @@
 Based on the [Chic Template](https://github.com/Siricee/hexo-theme-Chic) by [@Siricee](https://github.com/Siricee).
 
 <p align="center">
-![](screenshot.png)
+  <img width="500" alt="screenshot" src="/screenshot.png">
 </p>
 
 > Chic, French word means 'Elegant' in English.
