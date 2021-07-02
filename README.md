@@ -249,21 +249,21 @@ LaTeX grammers will not be illustrated in this doc. In Chic theme, Single '$' ro
 
 ## Customize
 
-- Highlight Style： Enter `hexo-theme-Chic\themes\Chic\source\css\style.styl` change stylesheet with key word `_highlight` in link in `_highlight` dictionary.
+- Highlight Style：Enter `maldorne-theme\source\css\style.styl` change stylesheet with key word `_highlight` in link in `_highlight` dictionary.
 
 - Customize stylesheets in path below.(stylus）
 
-   `hexo-theme-Chic\themes\Chic\source\css\custom.styl`
+   `maldorne-theme\source\css\custom.styl`
 
 - Customize javascripts in dictionary below.
 
-  `hexo-theme-Chic\themes\Chic\source\js`
+  `maldorne-theme\source\js`
 
-  Then add declareation in _config.yml key word 'script'
+  Then add declaration in `_config.yml` key word 'script'
 
 ## FAQ
 
-1. I deployed my site on second-level url(such as username.github.io/Blog), why my css,avatar and other sources  missed(404 error)?
+1. I deployed my site on second-level url (such as username.github.io/Blog), why my css,avatar and other sources missed (404 error)?
 
     Answer: You need change some URLs in root config url keyword. For instance:
     ```yaml
@@ -279,7 +279,7 @@ LaTeX grammers will not be illustrated in this doc. In Chic theme, Single '$' ro
 
 2. How to set the dark theme as default theme for whole site automatically?
    
-   Answer: You need to change some codes in `themes\Chic\source\js\script.js`, function `doucument.ready` as below.
+   Answer: You need to change some codes in `maldorne-theme\source\js\script.js`, function `document.ready` as below.
    ```javascript
    document.ready(
     function () {
@@ -292,17 +292,9 @@ LaTeX grammers will not be illustrated in this doc. In Chic theme, Single '$' ro
 
 3. More questions will be added later...
 
-## Gallery
-![screely-1560228577821.png](https://i.loli.net/2019/06/12/5d00a0850285252790.png)
-![screely-1560228791041.png](https://i.loli.net/2019/06/12/5d00a0856063661133.png)
-![screely-1560228621288.png](https://i.loli.net/2019/06/12/5d00a084e29cd40271.png)
-![screely-1560228761180.png](https://i.loli.net/2019/06/12/5d00a0855d28072392.png)
-
-![smartmockups_jwrd4ru3.png](https://i.loli.net/2019/06/12/5d00a085d115d16700.png)
-
-![smartmockups_jwrd9y4r.png](https://i.loli.net/2019/06/12/5d00a085ec26284832.png)
 
 ## LICENSE
-Chic © [@Sirice](https://github.com/Siricee)
+Chic © [@Siricee](https://github.com/Siricee)
+Maldorne © [@neverbot](https://github.com/neverbot)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
