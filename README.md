@@ -44,7 +44,7 @@ An elegant, powerful, easy-to-read Hexo theme.
 
 ## Features
 - Appropriate blank blocks, elegant but not simple.
-- Light/Dark theme, just one click.
+- ~Light/Dark theme, just one click.~ Removed in Maldorne version.
 - Abundant highlight mode.
 - Elaborately selected fonts, best reading experience. \* *'Microsoft Jhenghei' especially recommended.*
 - Auto fit Mobile and Screen responsively.
