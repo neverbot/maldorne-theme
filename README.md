@@ -39,8 +39,8 @@ Based on the [Chic Template](https://github.com/Siricee/hexo-theme-Chic) by [@Si
 An elegant, powerful, easy-to-read Hexo theme.
 
 ## Demo
+- [Demo site](https://maldorne.org)
 - [Demo site](https://siricee.github.io/hexo-theme-Chic)
-- [Author's blog](https://siricee.github.io/)
 
 ## Features
 - Appropriate blank blocks, elegant but not simple.
@@ -196,7 +196,7 @@ mathjax:
 </details>
 <br>
 
-### Add 'Tag','Category' Page
+### Add 'Tag', 'Category' Page
 
 There is no 'tag' or 'category' page in initialized site. If you need it, please follow the steps below.
 
@@ -221,7 +221,8 @@ layout: tag
 
 ### MathJax (Render LaTeX Formula)
 
-Related config file（`Chic/_config.yml`）：
+Related config file（`maldorne/_config.yml`）:
+
 ```yaml
 # plugin functions
 ## Mathjax: Math Formula Support
@@ -242,10 +243,10 @@ mathjax:
     title: MathJax Test
     date: 2019-07-05 21:27:59
     tags:
-    mathjax: true # add this statement,MathJax will enable in this post.
+    mathjax: true # add this statement, MathJax will enable in this post.
     ---
     ```
-LaTeX grammers will not be illustrated in this doc. In Chic theme, Single '$' rounded statement is regarded as inline formula like `$f(x)=ax+b$` ; Double '$' rounded statement is regarded as block formula like `$$f(x)=ax+b$$`.More information please read LaTeX doc and [Formula test page in Demo Site](https://siricee.github.io/hexo-theme-Chic/2019/07/05/MathJax_test/).
+LaTeX grammers will not be illustrated in this doc. In Chic theme, Single '$' rounded statement is regarded as inline formula like `$f(x)=ax+b$` ; Double '$' rounded statement is regarded as block formula like `$$f(x)=ax+b$$`. More information please read LaTeX doc and [Formula test page in Demo Site](https://siricee.github.io/hexo-theme-Chic/2019/07/05/MathJax_test/).
 
 ## Customize
 
