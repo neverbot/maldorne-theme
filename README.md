@@ -27,7 +27,7 @@ Based on the [Chic Template](https://github.com/Siricee/hexo-theme-Chic) by [@Si
 - [Features](#features)
 - [Installation](#installation)
 - [Configuration](#configuration)
-  - [Add 'Tag','Category' Page](#add-tagcategory-page)
+  - [Add 'Tag', 'Category' Page](#add-tagcategory-page)
   - [MathJax (Render LaTeX Formula)](#mathjax-render-latex-formula)
 - [Customize](#customize)
 - [FAQ](#faq)
