@@ -44,7 +44,7 @@ An elegant, powerful, easy-to-read Hexo theme.
 
 ## Features
 - Appropriate blank blocks, elegant but not simple.
-- Light/Dark theme，just one click.
+- Light/Dark theme, just one click.
 - Abundant highlight mode.
 - Elaborately selected fonts, best reading experience. \* *'Microsoft Jhenghei' especially recommended.*
 - Auto fit Mobile and Screen responsively.
@@ -235,9 +235,9 @@ mathjax:
 ```
 `mathjax` has keywords below：
 - `enable`: value`true` enable mathjax(default set `true`); value`false` disable.
-- `import`:this key sets mathjax load method，option could be `global` or `demand`.
-  - `global`：global import，all pages will load script.It's convenient，but **it may cause some MarkDown grammers parsed wrong**.for example, consecutive `$$` will be rendered as a formula；Besides,global import will waste performance in pages without any formula.
-  - `demand`【Recommended】：import mathjax when you need.After you set this value，if you need use formula,just declare it in post Front-matter.Here is an example below.
+- `import`:this key sets mathjax load method, option could be `global` or `demand`.
+  - `global`：global import, all pages will load script.It's convenient, but **it may cause some MarkDown grammers parsed wrong**.for example, consecutive `$$` will be rendered as a formula；Besides,global import will waste performance in pages without any formula.
+  - `demand`【Recommended】：import mathjax when you need.After you set this value, if you need use formula,just declare it in post Front-matter.Here is an example below.
     ```yaml
     ---
     title: MathJax Test
