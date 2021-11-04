@@ -39,8 +39,8 @@ Based on the [Chic Template](https://github.com/Siricee/hexo-theme-Chic) by [@Si
 An elegant, powerful, easy-to-read Hexo theme.
 
 ## Demo
-- [Demo site](https://maldorne.org)
-- [Demo site](https://siricee.github.io/hexo-theme-Chic)
+- [Demo site (maldorne.org)](https://maldorne.org)
+- [Demo site (siricee.github.io)](https://siricee.github.io/hexo-theme-Chic)
 
 ## Features
 - Appropriate blank blocks, elegant but not simple.
