@@ -22,6 +22,7 @@ tag_cloud: Nube de Etiquetas
 date: Fecha
 author: Autor
 back: Volver
+menu: Menú 
 
 nav:
   home: Home
@@ -34,6 +35,7 @@ home:
   webname: House of Maldorne
   ### this variable is MarkDown form.
   description: Jugamos, alojamos, desarrollamos y restauramos juegos online retro, nuevos y viejos, desde muds hasta roguelikes.
+  last-posts: Últimos posts
 
 toc:
   expand: Expandir

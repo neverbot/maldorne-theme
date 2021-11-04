@@ -22,6 +22,7 @@ tag_cloud: Tag Cloud
 date: Date
 author: Author
 back: Back
+menu: Menu 
 
 nav:
   home: Home
@@ -34,6 +35,7 @@ home:
   webname: House of Maldorne
   ### this variable is MarkDown form.
   description: We play, host, build, develop and recover old and new retro online games, from muds to roguelikes.
+  last-posts: Last blog posts
 
 toc:
   expand: Expand all
