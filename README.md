@@ -15,10 +15,6 @@ Based on the [Chic Template](https://github.com/Siricee/hexo-theme-Chic) by [@Si
 <img alt="Build Status" src="https://img.shields.io/badge/device-responsive-orange.svg"/>
 </p>
 
-## Doc language
-
-- [English](README.md)
-
 ## Contents
 - [Doc language](#doc-language)
 - [Contents](#contents)
@@ -33,7 +29,6 @@ Based on the [Chic Template](https://github.com/Siricee/hexo-theme-Chic) by [@Si
 - [FAQ](#faq)
 - [Gallary](#gallary)
 - [LICENSE](#license)
-
 
 ## Introduction
 An elegant, powerful, easy-to-read Hexo theme.
