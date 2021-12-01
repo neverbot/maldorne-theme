@@ -100,7 +100,7 @@
               <div class="timeline-circle"></div>
               <div class="timeline-title"><%- page.timeline[i].title %></div>
             </div>
-            <div><%- page.timeline[i].content.replace(/\n/g, '<br/>') %></div>
+            <div><%- markdown(page.timeline[i].content) %></div>
           </div>
         <% } %>
         </div>
