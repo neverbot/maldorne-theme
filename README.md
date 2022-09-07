@@ -151,7 +151,7 @@ post_category_enable: true
 ## Post copyright
 post_copyright_enable: true
 
-post_copyright_author_enable: true
+post_copyright_author_enable: false
 post_copyright_permalink_enable: true
 post_copyright_license_enable: false
 post_copyright_license_text: Copyright (c) 2022 House of Maldorne
