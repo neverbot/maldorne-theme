@@ -22,6 +22,7 @@ Based on the [Chic Template](https://github.com/Siricee/hexo-theme-Chic) by [@Si
 - [Demo](#demo)
 - [Features](#features)
 - [Installation](#installation)
+- [Requirements](#requirements)
 - [Configuration](#configuration)
   - [Add 'Tag', 'Category' Page](#add-tagcategory-page)
   - [MathJax (Render LaTeX Formula)](#mathjax-render-latex-formula)
@@ -46,7 +47,6 @@ An elegant, powerful, easy-to-read Hexo theme.
 - Support MathJax, Support Formula written in LaTeX.
 
 ## Installation
-
 ```bash
 cd your-blog/themes
 git clone https://github.com/neverbot/maldorne-theme.git maldorne
@@ -54,6 +54,10 @@ git clone https://github.com/neverbot/maldorne-theme.git maldorne
 - Modify theme setting in `_config.yml` to `maldorne`.
 - You can change the theme language in `themes/maldorne/_config.yml` in the `i18n/language` setting. 
 
+## Requirements
+Needed packages in your hexo blog:
+
+- `hexo-fontawesome`
 
 ## Configuration
 <details>
