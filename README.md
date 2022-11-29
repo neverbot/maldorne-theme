@@ -110,7 +110,7 @@ links:
     icon: linkedin
     prefix: fab
   Github: 
-    link: https://github.com/houseofmaldorne/
+    link: https://github.com/maldorne/
     icon: github
     prefix: fab
 #  Category:
