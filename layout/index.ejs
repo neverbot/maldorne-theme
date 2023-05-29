@@ -1,4 +1,6 @@
-<% if(is_home()) {%>
+<% if (is_home()) { %>
+  <% if (is_home_first_page()) { %>
     <%- partial('_page/profile') %>
-    <%- partial('_page/archive', {pagination: config.archive, index: true}) %>
-<%}%>
+  <% } %>
+  <%- partial('_page/archive', {pagination: config.archive, index: true}) %>
+<% } %>
