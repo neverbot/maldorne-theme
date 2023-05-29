@@ -30,11 +30,6 @@
     &:hover a 
       color  $light-pagination-link-active-color
     
-
-    .dark-theme &:hover a 
-      color  $dark-pagination-link-active-color
-    
-
     &:before,
     &:after 
       position absolute
@@ -45,11 +40,6 @@
       transition 0.3s
       bottom 0px
     
-    .dark-theme &:before,
-    .dark-theme &:after
-      background $dark-pagination-link-active-color
-    
-
     &:before .current,
     &:after .current
       width 100%
@@ -65,17 +55,9 @@
       &:after 
         width 50%
       
-    
     &.current
       color $light-pagination-link-active-color
-      
-
-      .dark-theme &
-        color $dark-pagination-link-active-color
       
       &:before,
       &:after 
         width 60%
-      
-    
-  
