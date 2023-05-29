@@ -19,8 +19,9 @@ nav:
 # favicons
 icons: true
 
-# Profile
-avatar: /image/maldorne_old_logo.png
+logos:
+  avatar: /image/logo.svg
+  icon: /image/icon.svg
 
 i18n:
   language: en

@@ -1,9 +1,8 @@
 <div class="container">
     <div class="intro">
         <div class="avatar">
-            <a href="<%- url_for(theme.nav.Blog) %>"><img src="<%- url_for(theme.avatar, { ignore: true }) %>"></a>
+            <a href="<%- url_for(theme.nav.Blog) %>"><img src="<%- url_for(theme.logos.avatar, { ignore: true }) %>"></a>
         </div>
-        <div class="nickname"><%- __('home.webname') %></div>
         <div class="description"><%- markdown(__('home.description')) %></div>
         <div class="links">
             <% if (theme.links !== undefined) { %>
