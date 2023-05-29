@@ -1,0 +1,38 @@
+.post-footer 
+  margin-top 3rem
+  padding 20px 0 0 0
+  border-top 1px solid $light-border-color
+  border-bottom 1px solid $light-border-color
+  color $light-post-footer-color
+  
+  a
+    color: $light-post-footer-link-color
+    text-decoration: underline
+
+    &:hover
+      color: $light-post-link-hover-color
+      text-decoration: none
+
+  .footer-item 
+    margin 5px 0
+
+  .post-author,
+  .post-time,
+  .post-category
+    margin-right 10px
+        
+  .post-tags 
+    justify-content space-between
+    display inline-block
+
+  .tag:not(:last-child) a::after 
+    content: " / "
+
+  .footer-navigation
+    float right
+    
+    a
+      color: $light-post-footer-color
+
+      &:hover
+        color: $light-post-link-hover-color

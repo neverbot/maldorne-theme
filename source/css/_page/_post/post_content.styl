@@ -1,4 +1,5 @@
 .post-content
+  color $light-post-content-color
   // padding-top 2rem
   text-align justify
 
@@ -52,15 +53,12 @@
     font-size 1em
 
   a
-    color $light-post-link-color
-    .dark-theme &
-      color $dark-post-link-color
+    color $light-post-content-color
+    text-decoration underline
 
-  a:hover
-    color $light-post-link-hover-color
-    .dark-theme &:hover
-      color $dark-post-link-hover-color
-      text-decoration underline
+    &:hover
+      color $light-post-link-hover-color
+      text-decoration none
 
   ul
     padding-left 2em
