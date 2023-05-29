@@ -21,7 +21,7 @@ how to add a category page:
  %>
 
 <% if(is_category()){ %>
-    <%- partial('_page/category', {pagination: config.category, index: true}) %>
+    <%- partial('_page/category', { index: true }) %>
 <% }else{ %>
 
     <div class="container">

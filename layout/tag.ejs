@@ -20,7 +20,7 @@ how to add a tag page:
 
  %>
 <% if(is_tag()){ %>
-    <%- partial('_page/tag', {pagination: config.tag, index: true}) %>
+    <%- partial('_page/tag', { index: true }) %>
 <% }else{ %>
     <div class="container">
         <div class="post-wrap tags">
