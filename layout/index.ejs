@@ -1,3 +1,5 @@
 <% if(is_home()) {%>
     <%- partial('_page/profile') %>
+    <div class="index-archive-title"><%- __('home.last-posts') %></div>
+    <%- partial('_page/archive', {pagination: config.archive, index: true}) %>
 <%}%>
