@@ -1,7 +1,9 @@
 <header>
     <nav class="navbar">
         <div class="container">
-            <div class="navbar-header header-logo"><a href="<%- url_for('') %>"><%= theme.navname %></a></div>
+            <div class="navbar-header header-logo">
+              <a href="<%- url_for('') %>"><img src="<%- url_for(theme.logos.icon, { ignore: true }) %>"></a><a href="<%- url_for('') %>"><%= theme.navname %></a>
+            </div>
             <div class="menu navbar-right">
                 <% for (var i in theme.nav){ %>
                     <a class="menu-item" href="<%- url_for(theme.nav[i].url) %>"><%= __(theme.nav[i].name) %></a>

@@ -1,15 +1,32 @@
-.header-logo a
-  padding 0 8px
+.navbar 
+  height 4rem
+  line-height 4rem
+  width 100%
+  
+  .container 
+    width auto
+    max-width 1200px
+    text-align center
+    margin 0 auto
+    display flex
+    justify-content space-between
 
-.navbar .menu a
-  padding 0 8px
+  .header-logo a
+    padding 0 0 0 4px
+    img
+      height 50px
+      padding 10px 0 0 0
+      float left
+      position relative
 
+  .menu a
+    padding 0 8px
 
-.navbar .menu .active
-  font-weight 900
-  color $light-navbar-active-color
-  .dark-theme &
-    color $dark-navbar-active-color
+  .menu .active
+    font-weight 900
+    color $light-navbar-active-color
+    .dark-theme &
+      color $dark-navbar-active-color
 
 
 .navbar-header a:hover, .navbar .menu a:hover
