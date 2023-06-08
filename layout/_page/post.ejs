@@ -10,6 +10,12 @@
             <h1 class="post-title"><%= page.title %></h1>
         </header>
 
+        <% if (page.video) { %>
+          <section class="post-video">
+            <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="<%= page.video %>"></div>
+          </section>
+        <% }%>
+
         <section class="post-content">
             <%- page.content %>
         </section>
