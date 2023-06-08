@@ -28,7 +28,7 @@ i18n:
 
 # main menu navigation
 ## link is the complete url
-## icon is the fontawesome icon name
+## icon is the fontawesome icon name
 ## prefix is the fontawesome style
 ## Unused keys can be commented out.
 links:
