@@ -1,19 +1,23 @@
-.post-footer 
+footer.post-meta 
   margin-top 3rem
   padding 20px 0 0 0
   border-top 1px solid $light-border-color
   border-bottom 1px solid $light-border-color
-  color $light-post-footer-color
-  
+  color $light-post-meta-color
+
+header .post-meta 
+  color $light-post-meta-color
+
+.post-meta   
   a
-    color: $light-post-footer-link-color
+    color: $light-post-meta-link-color
     text-decoration: underline
 
     &:hover
       color: $light-post-link-hover-color
       text-decoration: none
 
-  .footer-item 
+  .meta-item 
     margin 5px 0
 
   .post-author,
@@ -28,11 +32,11 @@
   .tag:not(:last-child) a::after 
     content: " / "
 
-  .footer-navigation
+  .meta-navigation
     float right
     
     a
-      color: $light-post-footer-color
+      color: $light-post-meta-color
 
       &:hover
         color: $light-post-link-hover-color

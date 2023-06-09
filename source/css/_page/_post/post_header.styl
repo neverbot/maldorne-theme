@@ -3,10 +3,21 @@
   p
     font-size 1em
     margin 1em 0 1em 0
+
+  .post-header
+    line-height 1em
+
   .post-header h1
     margin 0 !important
 
   .post-title
     font-size 2em
     line-height 1.5em
-  
+
+  .post-title::before
+    content "#"
+    color $light-post-link-color
+    position absolute
+    left -25px
+    font-style: italic;
+    font-weight: bold;
