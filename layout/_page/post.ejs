@@ -34,7 +34,7 @@
       </span>
       <% } %>
 
-      <% if (theme.post_category_enable && page.categories.length !== 0) { %>
+      <% if (theme.post_category_enable && page.categories && page.categories.length !== 0) { %>
       <span class="post-category">
       <%- __('category') %>:
       <% page.categories.forEach(item=>{ %>
@@ -51,7 +51,7 @@
 
       <p class="meta-item">
       <span class="post-tags">
-        <% if (page.tags.length!==0) { %>
+        <% if (page.tags && page.tags.length !== 0) { %>
         <span><%- __('tag') %>s:</span>
         <span class="tag">
           <% page.tags.forEach(item=>{ %>
