@@ -23,3 +23,26 @@
     float right
     text-align right
     color $light-font-secondary-color
+
+.miniblog-post
+  border: solid 1px $light-font-secondary-color;
+  border-radius: 10px;
+  padding: 0 20px;
+
+  .miniblog-link
+    font-size: 1.2em;
+    line-height: 1.5em;
+    text-decoration: underline;
+    font-weight: bold;
+    position: relative;
+
+  .miniblog-link::before
+    content: "#";
+    color: $light-post-link-color;
+    left: -58px;
+    top: 28px;
+    position: absolute;
+    font-weight: bold;
+    font-family: verdana;
+    font-size: 1.8em;
+    line-height: 1.2em;    

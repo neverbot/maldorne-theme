@@ -1,33 +1,47 @@
 <div class="post-wrap archive">
     <% page.posts.each(function (post) { %>
 
-      <article class="post-wrap">
-        <header class="post-header">
-          <a class="" href="<%- url_for(post.path) %>">
-            <h1 class="post-title"><%= post.title %></h1>
-          </a>
+      <% const tags = post.tags.toArray().map((item) => { return item.name; }); %>
+      <% if (post.tags && tags.includes('miniblog')) { %>
 
-          <div class="post-meta">
-            <% if (theme.post_date_enable && post.date) { %>
-            <span class="post-time">
-            <%- __('date') %>: <a href="#"><%- date(post.date, theme.date_format)  %></a>
-            </span>
-            <% } %>
-
-            <% if (theme.post_author_enable && post.author) { %>
-            <span class="post-author">
-            <%- __('author') %>: <a itemprop="author" rel="author" href="https://www.twitter.com/<%- post.author %>">@<%- post.author %></a>
-            </span>
-            <% } %>
+        <article class="post-wrap miniblog-post">
+          <a class="miniblog-link" href="<%- url_for(post.path) %>"></a>
+          <div class="post-content">
+            <%- post.content %>
           </div>
+        </article>
 
-        </header>
+      <% } else { %>
 
-        <section class="post-content">
-          <%- post.content %>
-        </section>
+        <article class="post-wrap">
+          <header class="post-header">
+            <a class="" href="<%- url_for(post.path) %>">
+              <h1 class="post-title"><%= post.title %></h1>
+            </a>
 
-      </article>
+            <div class="post-meta">
+              <% if (theme.post_date_enable && post.date) { %>
+              <span class="post-time">
+              <%- __('date') %>: <a href="#"><%- date(post.date, theme.date_format)  %></a>
+              </span>
+              <% } %>
+
+              <% if (theme.post_author_enable && post.author) { %>
+              <span class="post-author">
+              <%- __('author') %>: <a itemprop="author" rel="author" href="https://www.twitter.com/<%- post.author %>">@<%- post.author %></a>
+              </span>
+              <% } %>
+            </div>
+
+          </header>
+
+          <section class="post-content">
+            <%- post.content %>
+          </section>
+
+        </article>
+
+      <% } %>
 
     <% }) %>
     <%- partial('_partial/paginator') %>
