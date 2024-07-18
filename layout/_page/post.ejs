@@ -62,6 +62,10 @@
       </p>
     </footer>
 
+    <section class="post-comments">
+      <%- partial('_partial/comments') %>
+    </section>
+
     <section class="post-nav">
       <% if (post.prev) { %>
         <a class="prev" rel="prev" href="<%- url_for(post.prev.path)%>"><%- post.prev.title %></a>
