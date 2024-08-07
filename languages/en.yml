@@ -31,6 +31,10 @@ nav:
   about: About
   play: Play
   games: Games
+  docs:
+    name: Docs
+    hexagon: Hexagon mudlib documentation
+    dgd: DGD driver documentation
 
 home:
   webname: House of Maldorne

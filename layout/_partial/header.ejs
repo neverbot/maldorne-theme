@@ -6,7 +6,22 @@
             </div>
             <div class="menu navbar-right">
                 <% for (var i in theme.nav){ %>
-                    <a class="menu-item" href="<%- url_for(theme.nav[i].url) %>"><%= __(theme.nav[i].name) %></a>
+                    <% if (theme.nav[i].submenus) { %>
+                      <div class="menu-item menu-dropdown-container">
+                        <div class="menu-dropdown-toggle menu-click-dropdown">
+                          <%= __(theme.nav[i].name) %>
+                        </div>
+                        <div class="menu-dropdown-options">
+                          <ul>
+                            <% for (var j in theme.nav[i].submenus){ %>
+                            <li><a href="<%= theme.nav[i].submenus[j].url %>"><%= __(theme.nav[i].submenus[j].name) %></a></li>
+                            <% } %>
+                          </ul>
+                        </div>
+                      </div>
+                    <% } else { %>
+                      <a class="menu-item" href="<%- url_for(theme.nav[i].url) %>"><%= __(theme.nav[i].name) %></a>
+                    <% } %>
                 <% } %>
             </div>
 
@@ -24,23 +39,24 @@
             </div>
             <div class="menu" id="mobile-menu">
                 <% for (var i in theme.nav){ %>
-                    <a class="menu-item" href="<%- url_for(theme.nav[i].url) %>"><%= __(theme.nav[i].name) %></a>
+                    <% if (theme.nav[i].submenus) { %>
+                      <div class="menu-item menu-dropdown-container">
+                        <div class="menu-dropdown-toggle menu-click-dropdown">
+                          <%= __(theme.nav[i].name) %>
+                        </div>
+                        <div class="menu-dropdown-options">
+                          <ul>
+                            <% for (var j in theme.nav[i].submenus){ %>
+                            <li><a href="<%= theme.nav[i].submenus[j].url %>"><%= __(theme.nav[i].submenus[j].name) %></a></li>
+                            <% } %>
+                          </ul>
+                        </div>
+                      </div>
+                    <% } else { %>
+                      <a class="menu-item" href="<%- url_for(theme.nav[i].url) %>"><%= __(theme.nav[i].name) %></a>
+                    <% } %>
                 <% } %>
             </div>
         </div>
     </nav>
 </header>
-
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
-        var mobileMenu = document.getElementById("mobile-menu");
-        if(toggleMenu.classList.contains("active")){
-           toggleMenu.classList.remove("active")
-            mobileMenu.classList.remove("active")
-        }else{
-            toggleMenu.classList.add("active")
-            mobileMenu.classList.add("active")
-        }
-    }
-</script>

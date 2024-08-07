@@ -1,0 +1,112 @@
+
+/* Dropdown menu css */
+.menu-dropdown-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  
+  .menu-dropdown-toggle {
+    padding-right: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: all ease-in-out 0.3s;
+    color: $light-global-link-color;
+
+    &:hover,
+    &:active,
+    &:focus {
+      // background-color: #0979ce;
+      color: $light-post-link-color;
+    }
+  }
+
+  .menu-dropdown-options {
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 60px;
+    display: none;
+    background-color: $light-background-color;
+    z-index: 10;
+    text-align: left;
+    line-height: 3em;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      z-index: 10;
+    }
+
+    li {
+      // display: block ruby;
+      color: $light-font-color;
+      box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
+      transition: all ease-in-out 0.3s;
+      padding: 0 20px;
+      text-wrap: nowrap;
+
+      &:hover,
+      &:active,
+      &:focus {
+        // background-color: #0979ce;
+        color: $light-post-link-color;
+      }
+    }
+  }
+}
+
+.menu-dropdown-options,
+.menu-dropdown-toggle {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    border: 4px solid;
+    border-top-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    margin-top: -1.5px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+.menu-dropdown-options {
+  z-index: 10;
+  position: relative;
+
+  &::before {
+    z-index: -1;
+    transform: rotate(-135deg);
+    top: -2px;
+    right: 10px;
+    border-color: $light-background-color;
+    // border-top-color: $light-background-color;
+    // border-left-color: $light-background-color;
+    box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.9);
+  }
+}
+
+.dropdown-open {
+  .menu-dropdown-options.dropdown-active {
+    display: block;
+  }
+}
+
+.menu-dropdown-container.dropdown-open {
+  .menu-dropdown-toggle {
+    // background-color: #0979ce;
+    color: $light-post-link-color;
+
+    &:before {
+      transform: rotate(-135deg);
+    }
+  }
+}
