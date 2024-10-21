@@ -33,8 +33,9 @@ nav:
   games: Juegos
   docs:
     name: Docs
-    hexagon: Hexagon mudlib documentation
-    dgd: DGD driver documentation
+    hexagon: Documentación de la librería Hexagon
+    dgd: Documentación del motor DGD
+    rl: Reinos de Leyenda (Juego)
 
 home:
   webname: House of Maldorne

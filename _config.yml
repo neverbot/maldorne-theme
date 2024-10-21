@@ -13,6 +13,9 @@ nav:
       - 
         name: nav.docs.dgd
         url: /docs/dgd
+      - 
+        name: nav.docs.rl
+        url: /docs/rl
   - games: 
     name: nav.games
     url: /games
