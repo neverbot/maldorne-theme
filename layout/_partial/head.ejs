@@ -33,6 +33,8 @@ if (is_archive()){
 <link rel="manifest" href="<%- url_for('/icons/site.webmanifest', { ignore: true }) %>">
 <% } %>
 
+<%- autoCanonical(config, page) %>
+
 <%# css list %>
 <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
 <!-- stylesheets list from _config.yml -->
