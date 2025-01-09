@@ -13,9 +13,13 @@ nav:
       - 
         name: nav.docs.dgd
         url: /docs/dgd
+  - lore:
+    name: nav.lore.name
+    url: /lore
+    submenus:
       - 
-        name: nav.docs.rl
-        url: /docs/rl
+        name: nav.lore.rl
+        url: /lore/rl
   - games: 
     name: nav.games
     url: /games

@@ -35,6 +35,8 @@ nav:
     name: Docs
     hexagon: Hexagon mudlib documentation
     dgd: DGD driver documentation
+  lore:
+    name: Lore
     rl: Realms of Legend (game)
 
 home:

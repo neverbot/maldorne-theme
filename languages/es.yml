@@ -35,8 +35,9 @@ nav:
     name: Docs
     hexagon: Documentación de la librería Hexagon
     dgd: Documentación del motor DGD
+  lore:
+    name: Ambientación
     rl: Reinos de Leyenda (Juego)
-
 home:
   webname: House of Maldorne
   ### this variable is MarkDown form.
