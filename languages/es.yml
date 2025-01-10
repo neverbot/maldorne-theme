@@ -37,7 +37,7 @@ nav:
     dgd: Documentación del motor DGD
   lore:
     name: Ambientación
-    rl: Reinos de Leyenda (Juego)
+    rl: Reinos de Leyenda
 home:
   webname: House of Maldorne
   ### this variable is MarkDown form.
