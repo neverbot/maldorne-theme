@@ -33,7 +33,7 @@ if (is_archive()){
 <link rel="manifest" href="<%- url_for('/icons/site.webmanifest', { ignore: true }) %>">
 <% } %>
 
-<% if (is_archive()) { %>
+<% if (is_archive() || is_tag()) { %>
 <meta name="robots" content="noindex">
 <% } %>
 <%- autoCanonical(config, page) %>
