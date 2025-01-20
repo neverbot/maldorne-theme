@@ -13,8 +13,6 @@
 hexo.extend.helper.register('autoCanonical', function (config, page) {
   let base_url = config.url;
 
-  console.log(page.canonical_path + '\n');
-
   // add slash to the base url, except in the home (root dir)
   if (base_url.charAt(base_url.length - 1) !== '/' && page.canonical_path != 'index.html')
     base_url += '/';
