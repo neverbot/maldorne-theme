@@ -5,30 +5,30 @@ navname: House of Maldorne
 nav:
   - archive: 
     name: nav.archive 
-    url: /archives
+    url: /archives/
   - docs:
     name: nav.docs.name
-    url: /docs
+    url: /docs/
     submenus:
       - 
         name: nav.docs.dgd
-        url: /docs/dgd
+        url: /docs/dgd/
   - lore:
     name: nav.lore.name
-    url: /lore
+    url: /lore/
     submenus:
       - 
         name: nav.lore.rl
-        url: /lore/rl
+        url: /lore/rl/
   - games: 
     name: nav.games
-    url: /games
+    url: /games/
   - play: 
     name: nav.play
-    url: /play
+    url: /play/
   - about:
     name: nav.about
-    url: /about
+    url: /about/
 
 # favicons
 icons: true
@@ -47,7 +47,7 @@ i18n:
 ## Unused keys can be commented out.
 links:
   Archive: 
-    link: /archives
+    link: /archives/
     icon: book-open
     prefix: fas
   Twitter: 
