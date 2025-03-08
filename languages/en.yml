@@ -30,14 +30,14 @@ nav:
   blog: Blog
   about: About
   play: Play
-  games: Games
+  games:
+    name: Games
+    rl: Realms of Legend / Reinos de Leyenda
   docs:
     name: Docs
+    programming: Programming
     hexagon: Hexagon mudlib documentation
     dgd: DGD driver documentation
-  lore:
-    name: Lore
-    rl: Realms of Legend / Reinos de Leyenda
 
 home:
   webname: House of Maldorne

@@ -1,12 +1,12 @@
 
 /* Dropdown menu css */
-.menu-dropdown-container {
+.menu-dropdown-container
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: end;
   
-  .menu-dropdown-toggle {
+  .menu-dropdown-toggle
     padding-right: 15px;
     cursor: pointer;
     position: relative;
@@ -15,13 +15,11 @@
 
     &:hover,
     &:active,
-    &:focus {
+    &:focus
       // background-color: #0979ce;
       color: $light-post-link-color;
-    }
-  }
 
-  .menu-dropdown-options {
+  .menu-dropdown-options
     border-radius: 10px;
     box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 1);
     position: absolute;
@@ -32,32 +30,34 @@
     text-align: left;
     line-height: 3em;
 
-    ul {
+    ul
       list-style: none;
       padding: 0;
       margin: 0;
       overflow: hidden;
       border-radius: 10px;
       z-index: 10;
-    }
 
-    li {
+    li
       // display: block ruby;
       color: $light-font-color;
       box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
-      transition: all ease-in-out 0.3s;
-      padding: 0 20px;
       text-wrap: nowrap;
+      text-align: left;
+      padding: 0 10px;
+      font-weight: 700;
 
-      &:hover,
-      &:active,
-      &:focus {
-        // background-color: #0979ce;
-        color: $light-post-link-color;
-      }
-    }
-  }
-}
+      a 
+        padding: 0 20px;
+        text-align: center;
+        font-weight: normal;
+        
+        &:hover,
+        &:active,
+        &:focus
+          transition: all ease-in-out 0.3s;
+          // background-color: #0979ce;
+          color: $light-post-link-color;
 
 .menu-dropdown-options,
 .menu-dropdown-toggle {

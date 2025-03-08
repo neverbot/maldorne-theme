@@ -30,14 +30,14 @@ nav:
   blog: Blog
   about: Acerca de...
   play: Jugar
-  games: Juegos
+  games: 
+    name: Juegos
+    rl: Reinos de Leyenda
   docs:
     name: Docs
+    programming: Programación    
     hexagon: Documentación de la librería Hexagon
     dgd: Documentación del motor DGD
-  lore:
-    name: Ambientación
-    rl: Reinos de Leyenda
 home:
   webname: House of Maldorne
   ### this variable is MarkDown form.

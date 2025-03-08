@@ -11,17 +11,17 @@ nav:
     url: /docs/
     submenus:
       - 
+        name: nav.docs.programming
+      - 
         name: nav.docs.dgd
         url: /docs/dgd/
-  - lore:
-    name: nav.lore.name
-    url: /lore/
-    submenus:
       - 
-        name: nav.lore.rl
-        url: /lore/rl/
+        name: nav.games.name
+      - 
+        name: nav.games.rl
+        url: /docs/rl/
   - games: 
-    name: nav.games
+    name: nav.games.name
     url: /games/
   - play: 
     name: nav.play

@@ -14,7 +14,11 @@
                         <div class="menu-dropdown-options">
                           <ul>
                             <% for (var j in theme.nav[i].submenus){ %>
-                            <li><a href="<%= theme.nav[i].submenus[j].url %>"><%= __(theme.nav[i].submenus[j].name) %></a></li>
+                              <% if (theme.nav[i].submenus[j].url) { %>
+                                <li><a href="<%= theme.nav[i].submenus[j].url %>"><%= __(theme.nav[i].submenus[j].name) %></a></li>
+                              <% } else { %>
+                                <li><%= __(theme.nav[i].submenus[j].name) %></li>
+                              <% } %>
                             <% } %>
                           </ul>
                         </div>
