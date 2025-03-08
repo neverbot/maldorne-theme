@@ -1,4 +1,5 @@
 // change navbar in mobile view
+// eslint-disable-next-line no-unused-vars
 const mobileBtn = function f() {
   const toggleMenu = document.getElementsByClassName('menu-toggle')[0];
   const mobileMenu = document.getElementById('mobile-menu');
@@ -91,7 +92,7 @@ const domReady = (cb) => {
     : document.addEventListener('DOMContentLoaded', cb);
 };
 
-document.addEventListener('DOMContentLoaded', function (event) {
+document.addEventListener('DOMContentLoaded', function () {
   domReady(() => {
     // Get all the dropdown from document
     document.querySelectorAll('.menu-dropdown-toggle').forEach(dropDownFunc);
