@@ -3,7 +3,7 @@ hexo.extend.tag.register(
   function (args) {
     const [color, content] = args;
 
-    return '<span class="badge ' + color + '">' + content + '</span>';
+    return '<span class="badge" style="background-color:' + color + '">' + content + '</span>';
   },
   { ends: false, async: false },
 );

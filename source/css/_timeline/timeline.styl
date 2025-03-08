@@ -15,10 +15,12 @@
   
   img
     margin 0
+  img:hover
+    transform: scale(1.01)
 
 .timeline-node 
   position: relative
-  padding-left: 5.5rem
+  padding-left: 6.5rem
   padding-bottom: 1.5rem
   float: left
 
@@ -41,7 +43,7 @@
   color: #2d1b2e
   background-color: #e1e1e1
   border-radius: 9999px
-  // width: 4.9rem
+  width: 4.9rem
   white-space: nowrap
   overflow: hidden
   display: block
@@ -56,7 +58,7 @@
   padding-left: 1px
   padding-right: 1px
   background-color: #161209
-  margin-left: 4.45rem
+  margin-left: 5.45rem
   align-self: flex-start
   --transform-rotate: 0
   --transform-skew-x: 0
@@ -71,7 +73,7 @@
   position: absolute
   left: 0
   width: .5rem
-  margin-left: 4.0rem
+  margin-left: 5.0rem
   height: .5rem
   box-sizing: content-box
   border-width: 4px
@@ -100,3 +102,34 @@
 .timeline .last .timeline-line
   display: none
 
+.timeline.noleft
+  .timeline-circle
+    margin-left 0
+  .timeline-line
+    margin-left 0.45rem
+  .timeline-node
+    flex 1
+    position relative
+    padding-left 1.7rem
+  .timeline-time
+    display none
+
+
+@media screen and (max-width: 479px) 
+  .timeline
+    margin-top 40px
+  .timeline-circle
+    margin-left 0
+  .timeline-line
+    margin-left 0.45rem
+  .timeline-node
+    flex 1
+    position relative
+    padding-left 1.7rem
+  .timeline-time
+    display block !important
+    left unset
+    width unset
+    position absolute
+    top -33px
+    left 22px
