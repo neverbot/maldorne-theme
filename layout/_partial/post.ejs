@@ -1,0 +1,99 @@
+
+<% const categories = post.categories.toArray().map((item) => { return item.name; }); %>
+<% if (post.categories && categories.includes('hexagon')) { %>
+<article class="post-wrap category-hexagon">
+<% } else { %>
+<article class="post-wrap">
+<% } %>
+
+  <header class="post-header">
+    <a class="" href="<%- url_for(post.path) %>">
+      <h1 class="post-title"><%= post.title %></h1>
+    </a>
+
+    <% if (is_home() || is_archive() || is_tag() || is_category()) { %>    
+    <div class="post-meta">
+      <% if (theme.post_date_enable && post.date) { %>
+      <span class="post-time">
+      <%- __('date') %>: <a href="#"><%- date(post.date, theme.date_format)  %></a>
+      </span>
+      <% } %>
+
+      <% if (theme.post_author_enable && post.author) { %>
+      <span class="post-author">
+      <%- __('author') %>: <a itemprop="author" rel="author" href="https://www.twitter.com/<%- post.author %>">@<%- post.author %></a>
+      </span>
+      <% } %>
+    </div>
+    <% } %>
+
+  </header>
+
+  <section class="post-content">
+    <%- post.content %>
+  </section>
+
+  <% if (!is_home() && !is_archive() && !is_tag() && !is_category()) { %>    
+    <footer class="post-meta">
+      <p class="meta-item">
+      <% if (theme.post_author_enable && post.author) { %>
+      <span class="post-author">
+      <%- __('author') %>: <a itemprop="author" rel="author" href="https://www.twitter.com/<%- post.author %>">@<%- post.author %></a>
+      </span>
+      <% } %>
+
+      <% if (theme.post_date_enable && post.date) { %>
+      <span class="post-time">
+      <%- __('date') %>: <a href="#"><%- date(post.date, theme.date_format)  %></a>
+      </span>
+      <% } %>
+
+      <% if (theme.post_category_enable && post.categories && post.categories.length !== 0) { %>
+      <span class="post-category">
+      <%- __('category') %>:
+      <% post.categories.forEach(item=>{ %>
+        <a href="<%- url_for(item.path) %>"><%- item.name %></a>
+      <% }) %>
+      </span>
+      <% } %>
+      </p>
+
+      <p class="meta-item">
+        <span>Permalink:</span>
+        <span><a href="<%- post.permalink %>"><%- post.permalink %></a></span>
+      </p>
+
+      <p class="meta-item">
+      <span class="post-tags">
+        <% if (post.tags && post.tags.length !== 0) { %>
+        <span><%- __('tag') %>s:</span>
+        <span class="tag">
+          <% post.tags.forEach(item=>{ %>
+            <a href="<%- url_for(item.path) %>">#<%- item.name %></a>
+          <% }) %>
+        </span>
+        <% } %>
+      </span>
+      <span class="meta-navigation">
+        <a href="javascript:window.history.back();"><%- __('back').toLowerCase() %></a>
+        <span>· </span>
+        <a href="<%- url_for('') %>"><%- __('home').toLowerCase() %></a>
+      </span>      
+      </p>
+    </footer>
+
+    <section class="post-comments">
+      <%- partial('_partial/comments') %>
+    </section>
+
+    <section class="post-nav">
+      <% if (post.prev) { %>
+        <a class="prev" rel="prev" href="<%- url_for(post.prev.path)%>"><%- post.prev.title %></a>
+      <% } %>
+      <% if (post.next) { %>
+      <a class="next" rel="next" href="<%- url_for(post.next.path)%>"><%- post.next.title %></a>
+      <% } %>
+    </section>
+  <% } %>
+
+</article>

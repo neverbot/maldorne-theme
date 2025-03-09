@@ -1,78 +1,8 @@
 <div class="container">
   <%# toc %>
-  <% if (theme.post_toc_enable && toc(page.content).length!==0) { %>
+  <% if (theme.post_toc_enable && toc(post.content).length!==0) { %>
     <%- partial('_partial/toc') %>
   <% } %>
 
-  <%# article %>
-  <article class="post-wrap">
-    <header class="post-header">
-      <h1 class="post-title"><%= page.title %></h1>
-    </header>
-
-    <section class="post-content">
-      <%- page.content %>
-    </section>
-
-    <footer class="post-meta">
-      <p class="meta-item">
-      <% if (theme.post_author_enable && post.author) { %>
-      <span class="post-author">
-      <%- __('author') %>: <a itemprop="author" rel="author" href="https://www.twitter.com/<%- post.author %>">@<%- post.author %></a>
-      </span>
-      <% } %>
-
-      <% if (theme.post_date_enable && page.date) { %>
-      <span class="post-time">
-      <%- __('date') %>: <a href="#"><%- date(page.date, theme.date_format)  %></a>
-      </span>
-      <% } %>
-
-      <% if (theme.post_category_enable && page.categories && page.categories.length !== 0) { %>
-      <span class="post-category">
-      <%- __('category') %>:
-      <% page.categories.forEach(item=>{ %>
-        <a href="<%- url_for(item.path) %>"><%- item.name %></a>
-      <% }) %>
-      </span>
-      <% } %>
-      </p>
-
-      <p class="meta-item">
-        <span>Permalink:</span>
-        <span><a href="<%- page.permalink %>"><%- page.permalink %></a></span>
-      </p>
-
-      <p class="meta-item">
-      <span class="post-tags">
-        <% if (page.tags && page.tags.length !== 0) { %>
-        <span><%- __('tag') %>s:</span>
-        <span class="tag">
-          <% page.tags.forEach(item=>{ %>
-            <a href="<%- url_for(item.path) %>">#<%- item.name %></a>
-          <% }) %>
-        </span>
-        <% } %>
-      </span>
-      <span class="meta-navigation">
-        <a href="javascript:window.history.back();"><%- __('back').toLowerCase() %></a>
-        <span>· </span>
-        <a href="<%- url_for('') %>"><%- __('home').toLowerCase() %></a>
-      </span>      
-      </p>
-    </footer>
-
-    <section class="post-comments">
-      <%- partial('_partial/comments') %>
-    </section>
-
-    <section class="post-nav">
-      <% if (post.prev) { %>
-        <a class="prev" rel="prev" href="<%- url_for(post.prev.path)%>"><%- post.prev.title %></a>
-      <% } %>
-      <% if (post.next) { %>
-      <a class="next" rel="next" href="<%- url_for(post.next.path)%>"><%- post.next.title %></a>
-      <% } %>
-    </section>
-  </article>
+  <%- partial('_partial/post', { post }) %>
 </div>
