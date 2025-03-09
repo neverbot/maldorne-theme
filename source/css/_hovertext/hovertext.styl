@@ -1,5 +1,4 @@
-// .hovertext
-
+  
 .hovertext:before
   content attr(data-hover)
   visibility hidden
@@ -21,3 +20,7 @@
   opacity 1
   visibility visible
 
+@media screen and (max-width: 479px) 
+  .hovertext:before
+    left unset
+    right 0px
