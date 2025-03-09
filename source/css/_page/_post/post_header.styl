@@ -6,6 +6,9 @@
 
   .post-header
     line-height 0.4em
+    
+    h1
+      margin-top 0.3em
 
   // .post-header h1
   //   margin 0 !important
@@ -22,3 +25,29 @@
     left -35px
     font-weight bold
     font-family verdana
+
+// special post categories
+.category-hexagon, .category-capital-city
+  background-image: url("../image/hexagon.png");
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  
+.post-hexagon, .post-capital-city
+  background-color: rgba(248, 208, 109, 0.2);
+  border: solid 1px $light-font-secondary-color;
+  border-radius: 10px;
+  padding: 0 20px;
+  margin: 20px 0;
+  
+  .post-header h1
+    max-width 90%
+
+.category-capital-city
+  background-image: url("../image/capital-city.png");
+  
+.post-capital-city
+  background-color: rgba(172, 204, 253, 0.2)

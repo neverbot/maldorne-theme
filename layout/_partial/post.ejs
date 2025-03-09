@@ -1,9 +1,17 @@
 
 <% const categories = post.categories.toArray().map((item) => { return item.name; }); %>
-<% if (post.categories && categories.includes('hexagon')) { %>
-<article class="post-wrap category-hexagon">
+<% if (is_home() || is_archive() || is_tag() || is_category()) { %>
+  <% if (post.categories && categories.includes('hexagon')) { %>
+    <article class="post-wrap post-hexagon">
+    <div class="category-hexagon hovertext" data-hover="Post about the Hexagon game"></div>
+  <% } else if (post.categories && categories.includes('capital city')) { %>
+    <article class="post-wrap post-capital-city">
+    <div class="category-capital-city hovertext" data-hover="Post about the Capital City Game"></div>
+  <% } else { %>
+    <article class="post-wrap">
+  <% } %>
 <% } else { %>
-<article class="post-wrap">
+  <article class="post-wrap">
 <% } %>
 
   <header class="post-header">
