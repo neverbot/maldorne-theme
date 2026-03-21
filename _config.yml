@@ -118,7 +118,6 @@ stylesheets:
 
 # scripts loaded in the end of the body
 scripts:
-  - /js/script.js
   - /js/tocbot.min.js
   - /js/navbar.js
     # tscanlin/tocbot: Build a table of contents from headings in an HTML document.
