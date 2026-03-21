@@ -36,10 +36,7 @@
           cursor: pointer
           width: 44px
           height: 44px
-          display: flex
-          flex-direction: column
-          justify-content: center
-          align-items: center
+          position: relative
           background: none
           border: none
           padding: 0
@@ -48,33 +45,31 @@
           span
             display: block
             background: var(--font-color)
-            width: 24px
+            width: 22px
             height: 2px
             border-radius: 2px
-            transition: transform 0.3s ease, opacity 0.3s ease, margin 0.3s ease
+            position: absolute
+            left: 11px
+            transition: transform 0.3s ease, opacity 0.2s ease
 
           span:nth-child(1)
-            margin-bottom: 6px
+            top: 14px
+
+          span:nth-child(2)
+            top: 21px
 
           span:nth-child(3)
-            margin-top: 6px
+            top: 28px
 
           &.active
             span:nth-child(1)
-              margin: 0
-              transform: rotate(45deg) translate(0, 0)
-              transform-origin: center
-              position: relative
-              top: 1px
+              top: 21px
+              transform: rotate(45deg)
             span:nth-child(2)
               opacity: 0
-              margin: 0
             span:nth-child(3)
-              margin: 0
-              transform: rotate(-45deg) translate(0, 0)
-              transform-origin: center
-              position: relative
-              top: -1px
+              top: 21px
+              transform: rotate(-45deg)
 
       .menu
         background: $light-background-color
@@ -104,10 +99,14 @@
           line-height: 1.4em
           font-size: 1em
 
+        .menu-dropdown-container
+          padding: 0
+          margin: 0
+
         .menu-dropdown-toggle
           width: 100%
           text-align: left
-          padding-right: 40px
+          padding: 14px 40px 14px 20px
 
           &::before
             right: 20px
