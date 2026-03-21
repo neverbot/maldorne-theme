@@ -16,7 +16,11 @@
 
   <header class="post-header">
     <a class="" href="<%- url_for(post.path) %>">
+      <% if (is_home() || is_archive() || is_tag() || is_category()) { %>
+      <h2 class="post-title"><%= post.title %></h2>
+      <% } else { %>
       <h1 class="post-title"><%= post.title %></h1>
+      <% } %>
     </a>
 
     <% if (is_home() || is_archive() || is_tag() || is_category()) { %>    
