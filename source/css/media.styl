@@ -168,14 +168,20 @@
           overflow: hidden
 
   .miniblog-post
-    padding 10px
+    padding 4px 10px
     margin 30px 0 10px 0
     width auto
+    .post-content > *:first-child
+      margin-top 0.5em
+    .post-content > *:last-child
+      margin-bottom 0.5em
     .miniblog-link
       position static
-      display block
+      float left
       padding 0
-      margin-bottom -10px
+      margin 10px 8px 0 0
+      font-size 1.5em
+      font-family inherit
 
   // special post categories  
   .category-hexagon, .category-capital-city
