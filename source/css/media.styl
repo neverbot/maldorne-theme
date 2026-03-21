@@ -7,105 +7,120 @@
   .intro
     transform none
 
-  .navbar-mobile 
+  .navbar-mobile
     display: block !important
     position: fixed
     width: 100%
     z-index: 100
-    transition: all 0.6s ease 0s
 
-    .container 
+    .container
       padding: 0
       margin: 0
-      //height: 5em
-      line-height: 5.5em
       background: $light-background-color
 
-      .navbar-header 
+      .navbar-header
         display: flex
         justify-content: space-between
         align-items: center
         width: 100%
-        padding-right: 1em
-        padding-left: 1em
+        padding: 0 1em
         box-sizing: border-box
-        position relative
+        height: 56px
+
+        a
+          font-size: 1.1em
+          font-weight: 700
+          line-height: 56px
 
         .menu-toggle
           cursor: pointer
-          line-height: 5.5em
-          padding auto 2em
+          width: 44px
+          height: 44px
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
           background: none
           border: none
-          font: inherit
-          color: inherit
+          padding: 0
+          -webkit-tap-highlight-color: transparent
 
-          span 
+          span
             display: block
-            background: #000
-            width: 36px
+            background: var(--font-color)
+            width: 24px
             height: 2px
-            border-radius: 3px
-            transition: .25s margin .25s, .25s transform
+            border-radius: 2px
+            transition: transform 0.3s ease, opacity 0.3s ease, margin 0.3s ease
 
-          span:nth-child(1) 
-            margin-bottom: 8px
-          
-          span:nth-child(3) 
-            margin-top: 8px
-          
-          &.active 
-            span
-              transition: .25s margin, .25s transform .25s
-            
+          span:nth-child(1)
+            margin-bottom: 6px
+
+          span:nth-child(3)
+            margin-top: 6px
+
+          &.active
             span:nth-child(1)
-              transform: rotate(45deg) translate(4px, 6px)
-
-            span:nth-child(2) 
+              transform: rotate(45deg) translate(4px, 5px)
+            span:nth-child(2)
               opacity: 0
-            
-
             span:nth-child(3)
-              transform: rotate(-45deg) translate(8px, -10px)
-            
-      .menu 
-        // text-align: center
-        background: #ffffff
-        border-top: 1px solid #000000
-        display: none
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1)
-        padding 0
-        
-        > ul
-          margin 0
-          padding 0
-          list-style-type none
-          
-          > li
-            margin 0
-            padding 0 0 0 20px
-            line-height 1em
-            box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 1);
+              transform: rotate(-45deg) translate(5px, -6px)
 
-        .menu-dropdown-toggle::before
-          left: -20px;
-          right unset
+      .menu
+        background: $light-background-color
+        border-top: 1px solid var(--border-color)
+        display: none
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+        padding: 8px 0
+        max-height: calc(100vh - 56px)
+        overflow-y: auto
+
+        > ul
+          margin: 0
+          padding: 0
+          list-style-type: none
+
+          > li
+            margin: 0
+            border-bottom: 1px solid var(--border-color)
+
+        .menu-item,
+        .menu-dropdown-toggle
+          display: block
+          padding: 14px 20px
+          line-height: 1.4em
+          font-size: 1em
+
+        .menu-dropdown-toggle
+          width: 100%
+          text-align: left
+          padding-right: 40px
+
+          &::before
+            right: 20px
+            left: unset
 
         .menu-dropdown-container .menu-dropdown-options
-          position relative
-          top 0
-          margin-bottom 10px
-      
-        .menu-item
-          display inline-block
-          margin 0 1em
-          line-height: 2.5em
+          position: relative
+          top: 0
+          border: none
+          box-shadow: none
+          border-radius: 0
+          padding: 0
+          min-width: 0
 
-        &.active 
+          li
+            border-bottom: none
+            box-shadow: none
+            padding: 0
+
+          a
+            padding: 10px 20px 10px 36px
+            display: block
+
+        &.active
           display: block
-          white-space nowrap
-          box-sizing border-box
-          // overflow-x auto
    
   .archive
     width 90%
