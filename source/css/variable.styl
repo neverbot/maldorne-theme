@@ -1,28 +1,50 @@
-$light-background-color = #fff
 
-$light-font-color = #161209
-$light-font-secondary-color = #767676
+:root
+  --background-color #fff
+  --font-color #161209
+  --font-secondary-color #767676
+  --navbar-active-color #161209
+  --global-link-color #161209
+  --global-link-hover-color #2d96bd
+  --post-content-color #545454
+  --post-link-color #2d96bd
+  --post-link-hover-color #2d96bd
+  --post-meta-color #bbb
+  --post-meta-link-color #999
+  --pagination-link-color #2d96bd
+  --pagination-link-active-color #000
+  --border-color #e8e8e8
+  --code-font-color #c7254e
+  --code-background-color #f8f5ec
+  --post-blockquote-border-color var(--global-link-hover-color)
+  --post-blockquote-background-color #e9f5fa
+  --post-table-background-color #bce1ef
 
-$light-navbar-active-color = #161209
+$light-background-color = var(--background-color)
 
-$light-global-link-color = #161209
-$light-global-link-hover-color = #2d96bd
+$light-font-color = var(--font-color)
+$light-font-secondary-color = var(--font-secondary-color)
 
-$light-post-content-color = #545454
-$light-post-link-color = #2d96bd
-$light-post-link-hover-color = #2d96bd
-$light-post-meta-color = #bbb
-$light-post-meta-link-color = #999
+$light-navbar-active-color = var(--navbar-active-color)
 
-$light-pagination-link-color = #2d96bd
-$light-pagination-link-active-color = #000
+$light-global-link-color = var(--global-link-color)
+$light-global-link-hover-color = var(--global-link-hover-color)
 
-$light-border-color = #e8e8e8
+$light-post-content-color = var(--post-content-color)
+$light-post-link-color = var(--post-link-color)
+$light-post-link-hover-color = var(--post-link-hover-color)
+$light-post-meta-color = var(--post-meta-color)
+$light-post-meta-link-color = var(--post-meta-link-color)
 
-$light-code-font-color = #c7254e
-$light-code-background-color = #f8f5ec
+$light-pagination-link-color = var(--pagination-link-color)
+$light-pagination-link-active-color = var(--pagination-link-active-color)
 
-$light-post-blockquote-border-color = $light-global-link-hover-color
-$light-post-blockquote-background-color = lighten($light-global-link-hover-color,90%)
+$light-border-color = var(--border-color)
 
-$light-post-table-background-color = lighten($light-global-link-hover-color,70%)
+$light-code-font-color = var(--code-font-color)
+$light-code-background-color = var(--code-background-color)
+
+$light-post-blockquote-border-color = var(--post-blockquote-border-color)
+$light-post-blockquote-background-color = var(--post-blockquote-background-color)
+
+$light-post-table-background-color = var(--post-table-background-color)
