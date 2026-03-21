@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: end;
-  
+
   .menu-dropdown-toggle
     padding-right: 15px;
     cursor: pointer;
@@ -20,97 +20,80 @@
     &:hover,
     &:active,
     &:focus
-      // background-color: #0979ce;
       color: $light-post-link-color;
 
   .menu-dropdown-options
-    border-radius: 10px;
-    box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 1);
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
     position: absolute;
-    top: 60px;
+    top: 48px;
+    right: 0;
     display: none;
     background-color: $light-background-color;
     z-index: 10;
     text-align: left;
-    line-height: 3em;
+    line-height: 1.6em;
+    min-width: 200px;
+    padding: 6px 0;
 
     ul
       list-style: none;
       padding: 0;
       margin: 0;
-      overflow: hidden;
-      border-radius: 10px;
-      z-index: 10;
 
     li
-      // display: block ruby;
-      color: $light-font-color;
-      box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
+      color: $light-font-secondary-color;
       text-wrap: nowrap;
       text-align: left;
-      padding: 0 10px;
+      padding: 4px 16px;
+      font-size: 0.85em;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
 
-      a 
-        padding: 0 20px;
-        text-align: center;
+      &:not(:first-child)
+        margin-top: 4px;
+        border-top: 1px solid var(--border-color);
+        padding-top: 8px;
+
+      a
+        display: block;
+        padding: 2px 16px;
         font-weight: normal;
-        
+        font-size: 1.15em;
+        text-transform: none;
+        letter-spacing: 0;
+        color: $light-font-color;
+
         &:hover,
         &:active,
         &:focus
-          transition: color ease-in-out 0.3s;
-          // background-color: #0979ce;
           color: $light-post-link-color;
 
-.menu-dropdown-options,
-.menu-dropdown-toggle {
-  position: relative;
-
-  &::before {
+// Caret arrow
+.menu-dropdown-toggle
+  &::before
     content: "";
     position: absolute;
     right: 0px;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
     border: 4px solid;
-    border-top-color: rgba(0, 0, 0, 0);
-    border-left-color: rgba(0, 0, 0, 0);
+    border-top-color: transparent;
+    border-left-color: transparent;
     margin-top: -1.5px;
-    background-color: rgba(0, 0, 0, 0);
-    transition: all ease-in-out 0.3s;
-  }
-}
+    background-color: transparent;
+    transition: transform ease-in-out 0.2s;
 
-.menu-dropdown-options {
-  z-index: 10;
-  position: relative;
-
-  &::before {
-    z-index: -1;
-    transform: rotate(-135deg);
-    top: -2px;
-    right: 10px;
-    border-color: $light-background-color;
-    // border-top-color: $light-background-color;
-    // border-left-color: $light-background-color;
-    box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.9);
-  }
-}
-
-.dropdown-open {
-  .menu-dropdown-options.dropdown-active {
+.dropdown-open
+  .menu-dropdown-options.dropdown-active
     display: block;
-  }
-}
 
-.menu-dropdown-container.dropdown-open {
-  .menu-dropdown-toggle {
-    // background-color: #0979ce;
+.menu-dropdown-container.dropdown-open
+  .menu-dropdown-toggle
     color: $light-post-link-color;
 
-    &:before {
-      transform: rotate(-135deg);
-    }
-  }
-}
+    &::before
+      transform: translateY(-50%) rotate(-135deg);
+      margin-top: 1.5px;
