@@ -27,13 +27,13 @@
     <div class="post-meta">
       <% if (theme.post_date_enable && post.date) { %>
       <span class="post-time">
-      <%- __('date') %>: <a href="#"><%- date(post.date, theme.date_format)  %></a>
+      <%- __('date') %>: <time datetime="<%- post.date.toISOString() %>"><%- date(post.date, theme.date_format) %></time>
       </span>
       <% } %>
 
       <% if (theme.post_author_enable && post.author) { %>
       <span class="post-author">
-      <%- __('author') %>: <a itemprop="author" rel="author" href="https://www.twitter.com/<%- post.author %>">@<%- post.author %></a>
+      <%- __('author') %>: <a itemprop="author" rel="author noopener" target="_blank" href="https://x.com/<%- post.author %>">@<%- post.author %></a>
       </span>
       <% } %>
     </div>
@@ -45,18 +45,18 @@
     <%- post.content %>
   </section>
 
-  <% if (!is_home() && !is_archive() && !is_tag() && !is_category()) { %>    
+  <% if (!is_home() && !is_archive() && !is_tag() && !is_category()) { %>
     <footer class="post-meta">
       <p class="meta-item">
       <% if (theme.post_author_enable && post.author) { %>
       <span class="post-author">
-      <%- __('author') %>: <a itemprop="author" rel="author" href="https://www.twitter.com/<%- post.author %>">@<%- post.author %></a>
+      <%- __('author') %>: <a itemprop="author" rel="author noopener" target="_blank" href="https://x.com/<%- post.author %>">@<%- post.author %></a>
       </span>
       <% } %>
 
       <% if (theme.post_date_enable && post.date) { %>
       <span class="post-time">
-      <%- __('date') %>: <a href="#"><%- date(post.date, theme.date_format)  %></a>
+      <%- __('date') %>: <time datetime="<%- post.date.toISOString() %>"><%- date(post.date, theme.date_format) %></time>
       </span>
       <% } %>
 
@@ -87,7 +87,7 @@
         <% } %>
       </span>
       <span class="meta-navigation">
-        <a href="javascript:window.history.back();"><%- __('back').toLowerCase() %></a>
+        <button class="link-button" onclick="window.history.back()"><%- __('back').toLowerCase() %></button>
         <span>· </span>
         <a href="<%- url_for('') %>"><%- __('home').toLowerCase() %></a>
       </span>      

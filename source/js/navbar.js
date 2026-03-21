@@ -21,6 +21,7 @@ function dropDownFunc(dropDown) {
         // Close the clicked dropdown
         this.parentElement.classList.remove('dropdown-open');
         this.nextElementSibling.classList.remove('dropdown-active');
+        this.setAttribute('aria-expanded', 'false');
       } else {
         // Close the opend dropdown
         closeDropdown();
@@ -28,6 +29,7 @@ function dropDownFunc(dropDown) {
         // add the open and active class(Opening the DropDown)
         this.parentElement.classList.add('dropdown-open');
         this.nextElementSibling.classList.add('dropdown-active');
+        this.setAttribute('aria-expanded', 'true');
       }
     });
   }
@@ -71,6 +73,10 @@ function closeDropdown() {
 
   document.querySelectorAll('.menu-dropdown-options').forEach(function (menu) {
     menu.classList.remove('dropdown-active');
+  });
+
+  document.querySelectorAll('.menu-dropdown-toggle').forEach(function (toggle) {
+    toggle.setAttribute('aria-expanded', 'false');
   });
 }
 
