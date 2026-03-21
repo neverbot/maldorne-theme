@@ -7,7 +7,7 @@
 <%
 var description = '';
 if (is_post() || is_page()) {
-  description = strip_html(page.excerpt || page.content || '').substring(0, 200).trim();
+  description = strip_html(page.excerpt || page.content || '').replace(/\\/g, '').replace(/\s+/g, ' ').substring(0, 200).trim();
 }
 if (!description && config.description) {
   description = config.description;
