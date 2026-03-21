@@ -28,21 +28,18 @@
   border-radius: 10px;
   padding: 0 20px;
   margin: 20px 0;
-  
-  .miniblog-link
-    font-size: 1.2em;
-    line-height: 1.5em;
-    text-decoration: underline;
-    font-weight: bold;
-    position: relative;
+  position: relative;
 
-  .miniblog-link::before
-    content: "#";
-    color: $light-post-link-color;
-    left: -58px;
-    top: 28px;
+  .miniblog-link
     position: absolute;
+    left: -35px;
+    top: 0;
+    font-size: 2em;
     font-weight: bold;
     font-family: verdana;
-    font-size: 1.8em;
-    line-height: 1.2em;    
+    line-height: 1em;
+    text-decoration: none;
+    color: $light-post-link-color;
+    padding-top: 17px;
+    &:hover
+      color: $light-post-link-hover-color;
