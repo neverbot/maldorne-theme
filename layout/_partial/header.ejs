@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="container">
       <div class="navbar-header header-logo">
         <a href="<%- url_for('') %>"><img src="<%- url_for(theme.logos.icon, { ignore: true }) %>"></a><a href="<%- url_for('') %>"><%= theme.navname %></a>
@@ -33,13 +33,13 @@
   </nav>
 
   <%# mobile %>
-  <nav class="navbar-mobile" id="nav-mobile">
+  <nav class="navbar-mobile" id="nav-mobile" aria-label="Mobile navigation">
     <div class="container">
       <div class="navbar-header">
         <div>
           <a href="<%- config.root %>"><%= theme.navname %></a>
         </div>
-        <div class="menu-toggle" onclick="mobileBtn()">&#9776; <%- __('menu') %></div>
+        <div class="menu-toggle" role="button" aria-expanded="false" onclick="mobileBtn()">&#9776; <%- __('menu') %></div>
       </div>
       <div class="menu" id="mobile-menu">
         <ul>

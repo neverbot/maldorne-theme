@@ -3,13 +3,9 @@
 const mobileBtn = function f() {
   const toggleMenu = document.getElementsByClassName('menu-toggle')[0];
   const mobileMenu = document.getElementById('mobile-menu');
-  if (toggleMenu.classList.contains('active')) {
-    toggleMenu.classList.remove('active');
-    mobileMenu.classList.remove('active');
-  } else {
-    toggleMenu.classList.add('active');
-    mobileMenu.classList.add('active');
-  }
+  const isActive = toggleMenu.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  toggleMenu.setAttribute('aria-expanded', isActive);
 };
 
 // dropdown code, based in https://codepen.io/alvarotrigo/pen/ExEdrez
