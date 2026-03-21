@@ -49,6 +49,18 @@ if (is_archive()){
 <%- autoCanonical(config, page) %>
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
+<%# Open Graph %>
+<meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+<meta property="og:title" content="<%= title ? title + ' | ' + config.title : config.title %>">
+<% if (description) { %>
+<meta property="og:description" content="<%- description.replace(/"/g, '&quot;') %>">
+<% } %>
+<meta property="og:url" content="<%- page.permalink || config.url %>">
+<meta property="og:site_name" content="<%= config.title %>">
+<% if (theme.logos && theme.logos.avatar) { %>
+<meta property="og:image" content="<%- config.url + url_for(theme.logos.avatar, { ignore: true }) %>">
+<% } %>
+
 <%# css list %>
 <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
 <!-- stylesheets list from _config.yml -->
