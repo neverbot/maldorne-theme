@@ -77,9 +77,35 @@ if (is_archive()){
 <% }); %>
 <% } %>
 
-<%# video %>
-<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+<%# JSON-LD structured data %>
+<% if (is_post()) { %>
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": page.title,
+  "url": page.permalink,
+  "datePublished": page.date ? page.date.toISOString() : undefined,
+  "dateModified": page.updated ? page.updated.toISOString() : undefined,
+  "author": page.author ? { "@type": "Person", "name": page.author } : undefined,
+  "description": description || undefined,
+  "publisher": {
+    "@type": "Organization",
+    "name": config.title
+  }
+}) %>
+</script>
+<% } else if (is_home()) { %>
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": config.title,
+  "url": config.url,
+  "description": config.description || undefined
+}) %>
+</script>
+<% } %>
 
 <style>
   <%- fa_css() %>
