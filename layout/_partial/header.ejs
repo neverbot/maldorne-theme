@@ -2,7 +2,7 @@
   <nav class="navbar" aria-label="Main navigation">
     <div class="container">
       <div class="navbar-header header-logo">
-        <a href="<%- url_for('') %>"><img src="<%- url_for(theme.logos.icon, { ignore: true }) %>"></a><a href="<%- url_for('') %>"><%= theme.navname %></a>
+        <a href="<%- url_for('') %>" aria-label="<%= theme.navname %>"><img src="<%- url_for(theme.logos.icon, { ignore: true }) %>" alt="<%= theme.navname %>"></a><a href="<%- url_for('') %>"><%= theme.navname %></a>
       </div>
       <div class="menu navbar-right">
         <% for (var i in theme.nav){ %>
