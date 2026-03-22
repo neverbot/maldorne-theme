@@ -1,5 +1,8 @@
-// Capital City category - light blue background
-$capital-city-bg = rgba(172, 204, 253, 0.2)
+// Capital City category - full-width dark background
+$capital-city-primary = #1E2A3A
+$capital-city-accent = #E8B84B
+$capital-city-text = rgb(246, 240, 228)
+$capital-city-text-muted = rgba(246, 240, 228, 0.6)
 
 .category-capital-city
   background-image: url("../image/capital-city.png");
@@ -11,14 +14,60 @@ $capital-city-bg = rgba(172, 204, 253, 0.2)
   top: 5px;
 
 .post-capital-city
-  background-color: $capital-city-bg;
-  border: solid 1px $light-font-secondary-color;
-  border-radius: 10px;
-  padding: 0 20px;
-  margin: 20px 0;
+  position: relative;
+  max-width: none;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 2.5em calc((100vw - 780px) / 2);
+  background-color: $capital-city-primary;
+  color: $capital-city-text;
+  border: none;
+  border-radius: 0;
+  clip-path: url(#hexagon-clip);
+
+  .post-title
+    color: $capital-city-text;
+
+  .post-title::before
+    color: $capital-city-accent;
+
+  .post-meta,
+  .post-meta a,
+  .post-time,
+  .post-author
+    color: $capital-city-text-muted;
+
+  .post-content
+    color: $capital-city-text;
+
+    a
+      color: $capital-city-accent;
+      &:hover
+        color: lighten($capital-city-accent, 20%);
+
+    h2, h3, h4, h5, h6
+      color: $capital-city-text;
+
+    h2::before, h3::before, h4::before
+      color: $capital-city-accent;
+
+    blockquote
+      border-left-color: $capital-city-accent;
+      background-color: rgba(0, 0, 0, 0.15);
+      color: $capital-city-text;
+
+    code
+      color: $capital-city-accent;
+      background-color: rgba(0, 0, 0, 0.2);
+
+  .category-capital-city
+    opacity: 0.7
+    left: calc((100vw - 780px) / 2 - 80px)
+    top: calc(2em + 1.7em)
 
   .post-header h2
-    max-width 90%
+    max-width 100%
 
   .category-badge
     display none
