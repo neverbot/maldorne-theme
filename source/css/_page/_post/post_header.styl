@@ -10,9 +10,6 @@
     h1
       margin-top 0.3em
 
-  // .post-header h1
-  //   margin 0 !important
-
   .post-title
     font-family $display-font-family
     font-size 2em
@@ -26,83 +23,3 @@
     left -35px
     font-weight bold
     font-family verdana
-
-// special post categories - icons
-.category-hexagon, .category-capital-city
-  background-image: url("../image/hexagon.png");
-  background-size: 60px 60px;
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  left: -80px;
-  top: 5px;
-
-.category-capital-city
-  background-image: url("../image/capital-city.png");
-
-// hexagon posts - full-width dark background
-.post-hexagon
-  position: relative;
-  max-width: none;
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  padding: 2em calc((100vw - 780px) / 2);
-  background-color: #183B3F;
-  color: rgb(246, 240, 228);
-  border: none;
-  border-radius: 0;
-
-  .post-title
-    color: rgb(246, 240, 228);
-
-  .post-title::before
-    color: #81D8D9;
-
-  .post-meta,
-  .post-meta a,
-  .post-time,
-  .post-author
-    color: rgba(246, 240, 228, 0.6);
-
-  .post-content
-    color: rgb(246, 240, 228);
-
-    a
-      color: #81D8D9;
-      &:hover
-        color: lighten(#81D8D9, 20%);
-
-    h2, h3, h4, h5, h6
-      color: rgb(246, 240, 228);
-
-    h2::before, h3::before, h4::before
-      color: #81D8D9;
-
-    blockquote
-      border-left-color: #81D8D9;
-      background-color: rgba(0, 0, 0, 0.15);
-      color: rgb(246, 240, 228);
-
-    code
-      color: #81D8D9;
-      background-color: rgba(0, 0, 0, 0.2);
-
-  .category-hexagon
-    opacity: 0.7
-    left: calc((100vw - 780px) / 2 - 80px)
-    top: 2em
-
-  .post-header h2
-    max-width 100%
-
-// capital city posts - light blue background (existing style)
-.post-capital-city
-  background-color: rgba(172, 204, 253, 0.2);
-  border: solid 1px $light-font-secondary-color;
-  border-radius: 10px;
-  padding: 0 20px;
-  margin: 20px 0;
-
-  .post-header h2
-    max-width 90%
