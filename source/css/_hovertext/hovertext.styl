@@ -1,7 +1,4 @@
 
-.hovertext
-  position relative
-
 .hovertext:before
   content attr(data-hover)
   visibility hidden
@@ -44,7 +41,7 @@
   opacity 1
   visibility visible
 
-// Mobile: hide tooltip, show badge instead
+// Mobile: hide tooltip
 @media screen and (max-width: 479px)
   .hovertext:before,
   .hovertext:after
