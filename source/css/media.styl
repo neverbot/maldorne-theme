@@ -187,7 +187,7 @@
       font-size 1.5em
       font-family inherit
 
-  // special post categories  
+  // special post categories
   .category-hexagon, .category-capital-city
     background-size: 50px 50px;
     width: 50px;
@@ -195,9 +195,15 @@
     right: 5px;
     top: 5px;
 
-  // .post-hexagon, .post-capital-city  
-  //   .post-header h1
-  //     max-width 78%
+  .post-hexagon
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+    clip-path: none;
+
+    .category-hexagon
+      left: auto;
+      right: 5px;
+      top: 1em;
 
   .pagination .page-number
     margin 0 10px
