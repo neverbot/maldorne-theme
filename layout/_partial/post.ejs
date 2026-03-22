@@ -33,7 +33,7 @@
 
       <% if (theme.post_author_enable && post.author) { %>
       <span class="post-author">
-      <%- __('author') %>: <a itemprop="author" rel="author noopener" target="_blank" href="https://x.com/<%- post.author %>">@<%- post.author %></a>
+      <%- __('author') %>: <a itemprop="author" rel="author" href="<%= config.authors[post.author] ? config.authors[post.author].url : '/' %>">@<%- post.author %></a>
       </span>
       <% } %>
     </div>
@@ -50,7 +50,7 @@
       <p class="meta-item">
       <% if (theme.post_author_enable && post.author) { %>
       <span class="post-author">
-      <%- __('author') %>: <a itemprop="author" rel="author noopener" target="_blank" href="https://x.com/<%- post.author %>">@<%- post.author %></a>
+      <%- __('author') %>: <a itemprop="author" rel="author" href="<%= config.authors[post.author] ? config.authors[post.author].url : '/' %>">@<%- post.author %></a>
       </span>
       <% } %>
 
