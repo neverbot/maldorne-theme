@@ -3,11 +3,11 @@
 <% if (is_home() || is_archive() || is_tag() || is_category()) { %>
   <% if (post.categories && categories.includes('hexagon')) { %>
     <article class="post-wrap post-hexagon">
-    <div class="category-hexagon hovertext" data-hover="Hexagon mudlib"></div>
+    <div class="category-hexagon hovertext" data-hover="This is a post about the Hexagon mudlib"></div>
     <span class="category-badge">Hexagon</span>
   <% } else if (post.categories && categories.includes('capital city')) { %>
     <article class="post-wrap post-capital-city">
-    <div class="category-capital-city hovertext" data-hover="Capital City game"></div>
+    <div class="category-capital-city hovertext" data-hover="This is a post about the Capital City game"></div>
     <span class="category-badge">Capital City</span>
   <% } else { %>
     <article class="post-wrap">
