@@ -12,6 +12,8 @@ $hexagon-text-muted = rgba(246, 240, 228, 0.6)
   position: absolute;
   left: -80px;
   top: 5px;
+  background-color: $light-background-color;
+  padding: 5px;
 
 .post-hexagon
   position: relative;
@@ -24,6 +26,7 @@ $hexagon-text-muted = rgba(246, 240, 228, 0.6)
   color: $hexagon-text;
   border: none;
   border-radius: 0;
+  clip-path: polygon(0 15px, 100% 0, 100% calc(100% - 15px), 0 100%);
 
   .post-title
     color: $hexagon-text;
@@ -70,12 +73,3 @@ $hexagon-text-muted = rgba(246, 240, 228, 0.6)
 
   .category-badge
     display none
-
-// ============================================
-// Edge transition: clip-path with smooth wave
-// ============================================
-// Uses SVG clipPath with viewBox to keep wave proportions
-// consistent regardless of viewport width.
-
-.post-hexagon
-  clip-path: url(#hexagon-clip)

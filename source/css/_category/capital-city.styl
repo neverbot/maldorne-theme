@@ -12,6 +12,8 @@ $capital-city-text-muted = rgba(246, 240, 228, 0.6)
   position: absolute;
   left: -80px;
   top: 5px;
+  background-color: $light-background-color;
+  padding: 5px;
 
 .post-capital-city
   position: relative;
@@ -24,7 +26,7 @@ $capital-city-text-muted = rgba(246, 240, 228, 0.6)
   color: $capital-city-text;
   border: none;
   border-radius: 0;
-  clip-path: url(#hexagon-clip);
+  clip-path: polygon(0 15px, 100% 0, 100% calc(100% - 15px), 0 100%);
 
   .post-title
     color: $capital-city-text;
