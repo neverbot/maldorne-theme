@@ -51,6 +51,27 @@ if (is_archive()){
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
 <%# Open Graph %>
+<%
+var ogImage = '';
+if (is_post() || is_page()) {
+  var imgMatch = (page.content || '').match(/<img[^>]+src=["']([^"']+)["']/);
+  if (imgMatch) {
+    ogImage = imgMatch[1];
+    if (ogImage.startsWith('http')) {
+      // already absolute
+    } else if (ogImage.startsWith('/')) {
+      ogImage = config.url + ogImage;
+    } else {
+      var basePath = url_for(page.path).replace(/[^/]*$/, '');
+      ogImage = config.url + basePath + ogImage.replace(/^\.\//, '');
+    }
+  }
+}
+if (!ogImage && theme.logos && theme.logos.avatar) {
+  ogImage = config.url + url_for(theme.logos.avatar, { ignore: true });
+}
+if (!ogImage) ogImage = config.url + '/icons/apple-touch-icon.png';
+%>
 <meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
 <meta property="og:title" content="<%= title ? title + ' | ' + config.title : config.title %>">
 <% if (description) { %>
@@ -58,9 +79,7 @@ if (is_archive()){
 <% } %>
 <meta property="og:url" content="<%- page.permalink || config.url %>">
 <meta property="og:site_name" content="<%= config.title %>">
-<% if (theme.logos && theme.logos.avatar) { %>
-<meta property="og:image" content="<%- config.url + url_for(theme.logos.avatar, { ignore: true }) %>">
-<% } %>
+<meta property="og:image" content="<%- ogImage %>">
 
 <%# css list %>
 <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
