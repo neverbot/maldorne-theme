@@ -1,9 +1,9 @@
 <script type="text/javascript">
 window.onload = () => {
     let url = new URL(window.location.href);
-    let port = url.searchParams.get('port') || '5000';
     let frame = document.getElementById('maldorneFrame');
-    frame.src = 'https://play.maldorne.org/?port=' + port;
+    let query = url.search || '?mud=hexagon-en';
+    frame.src = 'https://play.maldorne.org/' + query;
 }
 </script>
 
