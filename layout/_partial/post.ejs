@@ -44,7 +44,12 @@
   </header>
 
   <section class="post-content">
-    <%- post.content %>
+    <% if ((is_home() || is_archive() || is_tag() || is_category()) && post.excerpt) { %>
+      <%- post.excerpt %>
+      <p class="read-more"><a href="<%- url_for(post.path) %>"><%- __('read_more') %> →</a></p>
+    <% } else { %>
+      <%- post.content %>
+    <% } %>
   </section>
 
   <% if (!is_home() && !is_archive() && !is_tag() && !is_category()) { %>
