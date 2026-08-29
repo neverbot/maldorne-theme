@@ -33,6 +33,7 @@ nav:
   games:
     name: Games
     rl: Realms of Legend / Reinos de Leyenda
+    cc: Ciudad Capital
   docs:
     name: Docs
     programming: Programming

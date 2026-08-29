@@ -20,6 +20,9 @@ nav:
       - 
         name: nav.games.rl
         url: /docs/rl/
+      - 
+        name: nav.games.cc
+        url: /docs/cc/
   - games: 
     name: nav.games.name
     url: /games/
