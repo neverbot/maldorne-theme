@@ -7,7 +7,9 @@
   align-items: end;
 
   .menu-dropdown-toggle
-    padding-right: 15px;
+    // zero the vertical padding browsers give a button, so the toggle's text
+    // sits on the same line as the anchors beside it
+    padding: 0 15px 0 0;
     cursor: pointer;
     position: relative;
     transition: color ease-in-out 0.3s;
