@@ -360,7 +360,7 @@
       html('strong', { textContent: loc.name }, head);
       html(
         'span',
-        { className: 'maps-meta', textContent: ` ${areaLabel(loc.area)}, level ${loc.z}` },
+        { className: 'maps-meta', textContent: `Level ${loc.z}` },
         head,
       );
       const exits = loc.exits.filter((e) => byId[e.to]);
@@ -374,7 +374,7 @@
             li,
           );
           b.addEventListener('click', () => select(e.to, true));
-          li.insertBefore(document.createTextNode(`${dirOf(e.dir)}: `), b);
+          li.insertBefore(html('span', { className: 'mapper-dir', textContent: `${dirOf(e.dir)}: ` }), b);
         });
       }
     }
