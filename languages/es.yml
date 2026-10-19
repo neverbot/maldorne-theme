@@ -32,13 +32,15 @@ nav:
   play: Jugar
   games: 
     name: Juegos
-    rl: Reinos de Leyenda
+    rl: "Reinos de Leyenda: Aeternum"
+    rl_maps: "Reinos de Leyenda: Aeternum - Mapas"
     cc: Ciudad Capital
   docs:
     name: Docs
     programming: Programación    
     hexagon: Documentación de la librería Hexagon
     dgd: Documentación del motor DGD
+    games: Nuestros juegos
 home:
   webname: House of Maldorne
   ### this variable is MarkDown form.

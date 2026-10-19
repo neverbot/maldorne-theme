@@ -1,0 +1,28 @@
+<div class="container">
+    <article class="post-wrap page maps-index">
+        <h2 class="post-title"><%- page.title %></h2>
+        <section class="post-content">
+            <% if (page.games) { %>
+            <p>Maps of the games running on Hexagon, drawn from the world itself.</p>
+            <ul class="maps-list">
+                <% page.entries.forEach(function (g) { %>
+                <li>
+                    <a href="<%- url_for(g.url) %>"><%= g.name %></a>
+                    <span class="maps-meta"><%= g.maps %> <%= g.maps === 1 ? 'map' : 'maps' %></span>
+                </li>
+                <% }); %>
+            </ul>
+            <% } else { %>
+            <p><a href="<%- url_for(page.parent.url) %>">All maps</a></p>
+            <ul class="maps-list">
+                <% page.entries.forEach(function (m) { %>
+                <li>
+                    <a href="<%- url_for(m.url) %>"><%= m.name %></a>
+                    <span class="maps-meta"><%= m.locations %> locations, <%= m.levels %> <%= m.levels === 1 ? 'level' : 'levels' %>, <%= m.areas %> <%= m.areas === 1 ? 'area' : 'areas' %></span>
+                </li>
+                <% }); %>
+            </ul>
+            <% } %>
+        </section>
+    </article>
+</div>

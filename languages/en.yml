@@ -32,13 +32,15 @@ nav:
   play: Play
   games:
     name: Games
-    rl: Realms of Legend / Reinos de Leyenda
-    cc: Ciudad Capital
+    rl: "Reinos de Leyenda: Aeternum (es)"
+    rl_maps: "Reinos de Leyenda: Aeternum - Mapas"
+    cc: Ciudad Capital (es)
   docs:
     name: Docs
     programming: Programming
     hexagon: Hexagon mudlib documentation
     dgd: DGD driver documentation
+    games: Our Games
 
 home:
   webname: House of Maldorne

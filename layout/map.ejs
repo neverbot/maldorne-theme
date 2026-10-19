@@ -1,0 +1,42 @@
+<%
+var meta = {
+    json: url_for(page.json_url),
+    base: url_for(page.base_url)
+};
+%>
+<div class="container">
+<article class="post-wrap page map-page">
+    <h2 class="post-title map-title"><%= page.map_name %></h2>
+    <p class="map-sub">
+        <a href="<%- url_for('/maps/') %>">Maps</a> /
+        <a href="<%- url_for(page.game_url) %>"><%= page.game_title %></a>
+        <span id="map-generated" class="maps-meta"><% if (page.generated) { %>Generated <%= page.generated %><% } %></span>
+    </p>
+
+    <div class="mapper" id="mapper">
+        <div class="mapper-bar">
+            <div class="mapper-search">
+                <input type="search" id="mapper-search" placeholder="Search a location" aria-label="Search a location" autocomplete="off">
+                <ul id="mapper-results" class="mapper-results" hidden></ul>
+            </div>
+            <div id="mapper-levels" class="mapper-levels" role="group" aria-label="Level"></div>
+            <div class="mapper-zoom" role="group" aria-label="Zoom">
+                <button type="button" id="mapper-zoom-out" aria-label="Zoom out">&minus;</button>
+                <button type="button" id="mapper-zoom-in" aria-label="Zoom in">+</button>
+                <button type="button" id="mapper-fit" aria-label="Fit the level">Fit</button>
+            </div>
+        </div>
+
+        <div class="mapper-board" id="mapper-board">
+            <svg id="mapper-svg" role="img" aria-label="Map of <%= page.map_name %>"></svg>
+            <div id="mapper-tip" class="mapper-tip" hidden></div>
+            <p id="mapper-status" class="mapper-status">Loading the map...</p>
+        </div>
+
+        <div id="mapper-info" class="mapper-info" hidden></div>
+        <p class="maps-meta mapper-help">Drag to move; Ctrl and the wheel (&#8984; on a Mac), the buttons or a pinch to zoom. Triangles mark stairs (up and down), diamonds mark ways in and out, short stubs mark exits to other areas.</p>
+    </div>
+</article>
+</div>
+<script type="application/json" id="mapper-meta"><%- JSON.stringify(meta).replace(/</g, '\\u003c') %></script>
+<script src="<%- url_for('/js/mapper.js') %>"></script>

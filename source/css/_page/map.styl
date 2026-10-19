@@ -1,0 +1,225 @@
+// public map viewer (layouts map and maps-index, js/mapper.js)
+.maps-meta
+  color $light-font-secondary-color
+  font-size 0.8em
+
+.maps-list
+  list-style none
+  padding 0
+  li
+    padding 0.4em 0
+    border-bottom 1px solid $light-border-color
+  .maps-meta
+    float right
+
+.map-page
+  .map-title
+    margin-bottom 0
+  .map-sub
+    margin 0 0 0.6em 0
+    .maps-meta
+      margin-left 1em
+
+.mapper
+  --map-bg #f7f5ee
+  --map-grid #e3dfd3
+  --map-line #8b8677
+  --map-ink #2a2923
+  --map-accent #2d96bd
+  display flex
+  flex-direction column
+  gap 0.6em
+  position relative
+
+  button, input
+    font inherit
+    font-size 0.8em
+    line-height 1.4
+    padding 0.25em 0.7em
+    border 1px solid $light-border-color
+    border-radius 5px
+    background $light-background-color
+    color $light-font-color
+    cursor pointer
+    &:hover
+      border-color $light-font-secondary-color
+    &:focus-visible
+      outline 2px solid var(--map-accent)
+      outline-offset 1px
+  button[aria-pressed="true"]
+    border-color var(--map-accent)
+    color var(--map-accent)
+    box-shadow inset 0 0 0 1px var(--map-accent)
+
+.mapper-bar
+  display flex
+  flex-wrap wrap
+  gap 0.5em 1em
+  align-items center
+
+.mapper-search
+  position relative
+  flex 1 1 12em
+  max-width 20em
+  input
+    width 100%
+    cursor text
+
+.mapper-results
+  position absolute
+  z-index 20
+  left 0
+  right 0
+  top 100%
+  margin 2px 0 0 0
+  padding 0
+  list-style none
+  max-height 16em
+  overflow-y auto
+  background $light-background-color
+  border 1px solid $light-border-color
+  border-radius 5px
+  box-shadow 0 4px 14px rgba(0, 0, 0, 0.12)
+  font-size 0.8em
+  li
+    padding 0.3em 0.7em
+  button
+    display block
+    width 100%
+    text-align left
+    border 0
+    padding 0.2em 0
+
+.mapper-levels, .mapper-zoom
+  display flex
+  flex-wrap wrap
+  gap 0.3em
+
+.mapper-board
+  position relative
+  width 100%
+  height 70vh
+  min-height 340px
+  overflow hidden
+  background var(--map-bg)
+  border 1px solid $light-border-color
+  border-radius 8px
+  svg
+    display block
+    width 100%
+    height 100%
+    cursor grab
+    touch-action none
+    user-select none
+    -webkit-user-select none
+    &:active
+      cursor grabbing
+
+.mapper-status
+  position absolute
+  top 0.6em
+  left 0.8em
+  margin 0
+  font-size 0.8em
+  color $light-font-secondary-color
+
+.mapper-tip
+  position absolute
+  z-index 10
+  pointer-events none
+  white-space pre
+  padding 0.2em 0.6em
+  font-size 0.75em
+  line-height 1.4
+  background var(--map-ink)
+  color #fff
+  border-radius 4px
+
+.mapper-line
+  stroke var(--map-line)
+  stroke-width 1.6
+  stroke-linecap round
+  vector-effect non-scaling-stroke
+  &.far
+    stroke-dasharray 4 3
+    opacity 0.7
+
+.mapper-room
+  cursor pointer
+  fill unquote("hsl(var(--h) 55% var(--l))")
+  stroke unquote("hsl(var(--h) 45% 26%)")
+  stroke-width 1.2
+  vector-effect non-scaling-stroke
+  &:hover
+    stroke var(--map-ink)
+    stroke-width 2.4
+  &.dim
+    opacity 0.18
+  &.selected
+    stroke var(--map-ink)
+    stroke-width 2.4
+
+.mapper-ring
+  fill none
+  stroke var(--map-accent)
+  stroke-width 2.4
+  vector-effect non-scaling-stroke
+  pointer-events none
+
+.mapper-mark
+  fill var(--map-ink)
+  pointer-events none
+  &.hollow
+    fill var(--map-bg)
+    stroke var(--map-ink)
+    stroke-width 1
+    vector-effect non-scaling-stroke
+
+.mapper-ext
+  cursor help
+  .stub
+    stroke var(--map-accent)
+    stroke-width 1.8
+    vector-effect non-scaling-stroke
+  .dot
+    fill var(--map-bg)
+    stroke var(--map-accent)
+    stroke-width 1.6
+    vector-effect non-scaling-stroke
+  .hit
+    fill transparent
+  &.linked
+    cursor pointer
+    .dot
+      fill var(--map-accent)
+
+.mapper-info
+  font-size 0.85em
+  padding 0.5em 0.8em
+  border 1px solid $light-border-color
+  border-radius 8px
+  p
+    margin 0
+  .mapper-exits
+    margin 0.3em 0 0 0
+    padding 0
+    list-style none
+    display flex
+    flex-wrap wrap
+    gap 0 1.2em
+    line-height 1.6
+  .mapper-link
+    border 0
+    padding 0
+    background none
+    color $light-post-link-color
+    text-decoration underline
+
+.mapper-help
+  margin 0
+
+@media screen and (max-width: 479px)
+  .mapper-board
+    height 62vh
+  .mapper-search
+    max-width none

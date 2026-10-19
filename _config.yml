@@ -16,10 +16,13 @@ nav:
         name: nav.docs.dgd
         url: /docs/dgd/
       - 
-        name: nav.games.name
+        name: nav.docs.games
       - 
         name: nav.games.rl
         url: /docs/rl/
+      - 
+        name: nav.games.rl_maps
+        url: /maps/rl/
       - 
         name: nav.games.cc
         url: /docs/cc/
