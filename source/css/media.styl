@@ -240,3 +240,9 @@
 @media screen and (max-width: 1279px) // 最大宽度1279px时应用这条规则。（最大宽度小于1279px返回false，屏蔽规则。）
   .post-toc
     display none
+
+/* the # of a title hangs 35px outside the 780px column, and the column only
+   has that much room to its left from a 850px viewport up */
+@media screen and (max-width: 849px)
+  .post-wrap .post-title::before
+    content none
