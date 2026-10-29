@@ -145,6 +145,40 @@
     color inherit
     opacity .75
 
+  // a mark is a small identifying image, left aligned with the text rather
+  // than centred like the full width ones
+  img.mark
+    width 100%
+    margin 0
+
+  // a page that opens with a mark sets it in a column of its own, with the
+  // prose beside it, so the image shares an edge with the whole block of text
+  // instead of hanging over its first line. below 701px there is no room for
+  // both and the page stays in normal flow
+  @media screen and (min-width: 701px)
+    &:has(> p > img.mark)
+      display grid
+      grid-template-columns 200px 1fr
+      column-gap 2.2em
+      // margins do not collapse inside a grid, so the paragraphs lose theirs
+      // and the gap takes over, to keep the spacing of the rest of the site
+      row-gap 1em
+      align-items start
+
+      > *
+        grid-column 2
+        margin 0
+
+      // the mark spans every row so the prose keeps its own rhythm beside it,
+      // and drops by the half leading plus the gap between ascender and cap
+      // height, so its top edge meets the capitals of the first line instead
+      // of the top of the line box
+      > p:first-child
+        grid-column 1
+        grid-row 1 / span 99
+        align-self start
+        margin .5em 0 0
+
   // the float utilities of base.styl lose their gutter to the margin shorthand
   // of .post-content img, which is both later in the file and more specific
   img.left
