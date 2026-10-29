@@ -144,3 +144,11 @@
     // and on the dark cards of the front page alike
     color inherit
     opacity .75
+
+  // the float utilities of base.styl lose their gutter to the margin shorthand
+  // of .post-content img, which is both later in the file and more specific
+  img.left
+    margin 0 25px 1em 0
+
+  img.right
+    margin 0 0 1em 25px
