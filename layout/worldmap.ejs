@@ -1,0 +1,38 @@
+<%
+var meta = {
+    levels: page.levels.map(function (l) { return { z: l.z, url: url_for(l.url) }; })
+};
+%>
+<div class="container">
+<article class="post-wrap page map-page">
+    <h2 class="post-title map-title"><%= page.map_name %></h2>
+    <p class="map-sub">
+        <a href="<%- url_for('/maps/') %>">Maps</a> /
+        <a href="<%- url_for(page.game_url) %>"><%= page.game_title %></a>
+        <span class="maps-meta"><% if (page.generated) { %>Generated <%= page.generated %><% } %></span>
+    </p>
+
+    <div class="mapper worldmap" id="mapper">
+        <div class="mapper-bar">
+            <div id="mapper-levels" class="mapper-levels" role="group" aria-label="Level"></div>
+            <div class="mapper-zoom" role="group" aria-label="Zoom">
+                <button type="button" id="mapper-zoom-out" aria-label="Zoom out">&minus;</button>
+                <button type="button" id="mapper-zoom-in" aria-label="Zoom in">+</button>
+                <button type="button" id="mapper-fit" aria-label="Fit the level">Fit</button>
+            </div>
+        </div>
+
+        <div class="mapper-board worldmap-board" id="mapper-board">
+            <canvas id="worldmap-canvas" role="img" aria-label="<%= page.title %>"></canvas>
+            <div id="worldmap-labels" class="worldmap-labels"></div>
+            <p id="mapper-status" class="mapper-status">Loading the map...</p>
+        </div>
+
+        <ul id="worldmap-legend" class="worldmap-legend"></ul>
+        <p class="maps-meta mapper-help">Drag to move; Ctrl and the wheel (&#8984; on a Mac), the buttons or a pinch to zoom.</p>
+    </div>
+</article>
+</div>
+<script type="application/json" id="mapper-meta"><%- JSON.stringify(meta).replace(/</g, '\\u003c') %></script>
+<script src="<%- url_for('/js/map-gestures.js') %>"></script>
+<script src="<%- url_for('/js/worldmap.js') %>"></script>

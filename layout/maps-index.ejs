@@ -18,7 +18,11 @@
                 <% page.entries.forEach(function (m) { %>
                 <li>
                     <a href="<%- url_for(m.url) %>"><%= m.name %></a>
+                    <% if (m.world) { %>
+                    <span class="maps-meta"><%= m.levels %> <%= m.levels === 1 ? 'level' : 'levels' %></span>
+                    <% } else { %>
                     <span class="maps-meta"><%= m.locations %> locations, <%= m.levels %> <%= m.levels === 1 ? 'level' : 'levels' %>, <%= m.areas %> <%= m.areas === 1 ? 'area' : 'areas' %></span>
+                    <% } %>
                 </li>
                 <% }); %>
             </ul>

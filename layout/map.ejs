@@ -39,4 +39,5 @@ var meta = {
 </article>
 </div>
 <script type="application/json" id="mapper-meta"><%- JSON.stringify(meta).replace(/</g, '\\u003c') %></script>
+<script src="<%- url_for('/js/map-gestures.js') %>"></script>
 <script src="<%- url_for('/js/mapper.js') %>"></script>

@@ -244,7 +244,6 @@
           y: sy(a) - SIZE / 2,
           width: SIZE,
           height: SIZE,
-          rx: 2,
           class: 'mapper-room',
           'data-id': a.id,
           style: `--h:${areaHue[groupOf(a)]};--l:${areaHue[groupOf(a) + ':l']}%`,
@@ -358,11 +357,7 @@
     if (loc) {
       const head = html('p', { className: 'mapper-info-head' }, els.info);
       html('strong', { textContent: loc.name }, head);
-      html(
-        'span',
-        { className: 'maps-meta', textContent: `Level ${loc.z}` },
-        head,
-      );
+      html('span', { className: 'maps-meta', textContent: `Level ${loc.z}` }, head);
       const exits = loc.exits.filter((e) => byId[e.to]);
       if (exits.length) {
         const ul = html('ul', { className: 'mapper-exits' }, els.info);
@@ -374,7 +369,10 @@
             li,
           );
           b.addEventListener('click', () => select(e.to, true));
-          li.insertBefore(html('span', { className: 'mapper-dir', textContent: `${dirOf(e.dir)}: ` }), b);
+          li.insertBefore(
+            html('span', { className: 'mapper-dir', textContent: `${dirOf(e.dir)}: ` }),
+            b,
+          );
         });
       }
     }
@@ -446,78 +444,20 @@
     els.tip.style.top = ev.clientY - r.top + 14 + 'px';
   };
 
-  // ---- pointers: drag with one, pinch with two
+  // ---- pointers
 
-  const pointers = new Map();
-  let moved = false;
-  let last = null;
-
-  const span = () => {
-    const [a, b] = [...pointers.values()];
-    return { d: Math.hypot(a.x - b.x, a.y - b.y), x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
-  };
-
-  svg.addEventListener('pointerdown', (ev) => {
-    if (ev.pointerType === 'mouse' && ev.button !== 0) return;
-    pointers.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
-    if (pointers.size === 1) moved = false;
-    else moved = true;
-    last = pointers.size === 2 ? span() : null;
-  });
-
-  window.addEventListener('pointermove', (ev) => {
-    const p = pointers.get(ev.pointerId);
-    if (!p) return;
-    const r = board.getBoundingClientRect();
-    if (pointers.size === 1) {
-      const dx = ev.clientX - p.x;
-      const dy = ev.clientY - p.y;
-      if (!moved && Math.hypot(dx, dy) < 4) return;
-      moved = true;
-      p.x = ev.clientX;
-      p.y = ev.clientY;
+  const wasMoved = window.mapGestures(svg, board, {
+    pan: (dx, dy) => {
       view.x += dx;
       view.y += dy;
       applyView();
       els.tip.hidden = true;
-    } else if (pointers.size === 2) {
-      p.x = ev.clientX;
-      p.y = ev.clientY;
-      const now = span();
-      if (last && last.d > 0) {
-        view.x += now.x - last.x;
-        view.y += now.y - last.y;
-        zoomAt(now.d / last.d, now.x - r.left, now.y - r.top);
-      }
-      last = now;
-    }
+    },
+    zoom: zoomAt,
   });
 
-  const release = (ev) => {
-    pointers.delete(ev.pointerId);
-    last = null;
-  };
-  window.addEventListener('pointerup', release);
-  window.addEventListener('pointercancel', release);
-
-  svg.addEventListener(
-    'wheel',
-    (ev) => {
-      // the wheel alone scrolls the page; with Ctrl or Cmd it zooms the map
-      if (!ev.ctrlKey && !ev.metaKey) return;
-      ev.preventDefault();
-      const r = board.getBoundingClientRect();
-      zoomAt(
-        Math.exp(-ev.deltaY * (ev.deltaMode ? 0.05 : 0.0015)),
-        ev.clientX - r.left,
-        ev.clientY - r.top,
-      );
-    },
-    { passive: false },
-  );
-
   svg.addEventListener('click', (ev) => {
-    if (moved) return;
+    if (wasMoved()) return;
     const room = ev.target.closest('[data-id]');
     const stub = ev.target.closest('[data-ext]');
     if (room) select(room.getAttribute('data-id'), false);

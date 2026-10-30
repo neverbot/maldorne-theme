@@ -1,4 +1,5 @@
 // public map viewer (layouts map and maps-index, js/mapper.js)
+$worldmap-font = Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace
 .maps-meta
   color $light-font-secondary-color
   font-size 0.8em
@@ -37,7 +38,6 @@
     line-height 1.4
     padding 0.25em 0.7em
     border 1px solid $light-border-color
-    border-radius 5px
     background $light-background-color
     color $light-font-color
     cursor pointer
@@ -78,7 +78,6 @@
   overflow-y auto
   background $light-background-color
   border 1px solid $light-border-color
-  border-radius 5px
   box-shadow 0 4px 14px rgba(0, 0, 0, 0.12)
   font-size 0.8em
   li
@@ -103,7 +102,6 @@
   overflow hidden
   background var(--map-bg)
   border 1px solid $light-border-color
-  border-radius 8px
   svg
     display block
     width 100%
@@ -133,7 +131,6 @@
   line-height 1.4
   background var(--map-ink)
   color #fff
-  border-radius 4px
 
 .mapper-line
   stroke var(--map-line)
@@ -200,7 +197,6 @@
   line-height 1.5
   padding 0.7em 1em
   border 1px solid $light-border-color
-  border-radius 8px
   p
     margin 0
   .maps-meta
@@ -234,3 +230,63 @@
     height 62vh
   .mapper-search
     max-width none
+
+// world map viewer (layout worldmap, js/worldmap.js)
+.worldmap
+  --map-bg #111111
+  --map-ink #aaaaaa
+  .mapper-bar
+    justify-content space-between
+  .mapper-status
+    color var(--map-ink)
+
+.worldmap-board
+  cursor grab
+  touch-action none
+  user-select none
+  -webkit-user-select none
+  &:active
+    cursor grabbing
+  canvas
+    display block
+    width 100%
+    height 100%
+
+.worldmap-labels
+  position absolute
+  inset 0
+  overflow hidden
+  pointer-events none
+  span, a
+    position absolute
+    top 0
+    left 0
+    color var(--map-ink)
+    font-family $worldmap-font
+    line-height 1
+    white-space pre
+    text-shadow 0 0 3px var(--map-bg), 0 0 3px var(--map-bg)
+    will-change transform
+  a
+    pointer-events auto
+    text-decoration underline
+    text-underline-offset 0.2em
+    &:hover
+      color var(--map-accent)
+
+.worldmap-legend
+  display flex
+  flex-wrap wrap
+  gap 0.2em 1.2em
+  margin 0
+  padding 0.5em 0.8em
+  list-style none
+  background var(--map-bg)
+  color var(--map-ink)
+  font-size 0.8em
+  b
+    font-family $worldmap-font
+    font-weight normal
+    margin-right 0.4em
+    &.bold
+      font-weight bold
