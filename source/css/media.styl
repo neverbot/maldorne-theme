@@ -1,13 +1,9 @@
-/* mobile phone and smart portable devices */
-@media screen and (max-width: 479px) 
+/* the mobile navbar takes over where the logo and the menu stop fitting in a line */
+@media screen and (max-width: 599px)
   .main
     padding-top 70pt
   .navbar
     display none
-  .intro
-    transform none
-    height auto
-    margin-bottom 2em
 
   .navbar-mobile
     display: block !important
@@ -134,7 +130,14 @@
 
         &.active
           display: block
-   
+
+/* mobile phone and smart portable devices */
+@media screen and (max-width: 479px)
+  .intro
+    transform none
+    height auto
+    margin-bottom 2em
+
   .archive
     width 90%
     padding-top: 0;
