@@ -106,6 +106,23 @@
   const groupOf = (l) => (l.zone ? 'z:' + l.zone : 'a:' + l.area);
   const levelLocations = (z) => map.locations.filter((l) => l.z === z);
 
+  // the way a stub goes when its exit has no compass direction (up, down, in, out):
+  // a free one, the same for a room on every draw
+  const freeDir = (a, taken) => {
+    const names = Object.keys(COMPASS);
+    const seed = [...a.id].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
+    const order = names.map((_, i) => names[(seed + i) % names.length]);
+    const crowded = (d) =>
+      map.locations.some(
+        (l) => l.z === a.z && l.x === a.x + COMPASS[d][0] && l.y === a.y - COMPASS[d][1],
+      );
+    return (
+      order.find((d) => !taken.has(d) && !crowded(d)) ||
+      order.find((d) => !taken.has(d)) ||
+      order[0]
+    );
+  };
+
   // ---- view: pan, zoom
 
   const applyView = () => {
@@ -285,10 +302,14 @@
 
     // exits to other areas: a stub in the direction, clickable
     list.forEach((a) => {
+      const taken = new Set(a.exits.map((e) => dirOf(e.dir)));
+      (ext[a.id] || []).forEach((i) => taken.add(dirOf(map.external[i].dir)));
       (ext[a.id] || []).forEach((i) => {
         const e = map.external[i];
-        const v = COMPASS[dirOf(e.dir)];
-        if (!v) return;
+        const compass = COMPASS[dirOf(e.dir)];
+        const free = compass ? null : freeDir(a, taken);
+        if (free) taken.add(free);
+        const v = compass || COMPASS[free];
         const gap = SIZE / 2 + 0.5;
         const len = Math.hypot(v[0], v[1]);
         const ux = v[0] / len;
@@ -297,7 +318,10 @@
         const ey = sy(a) + uy * CELL * 0.95;
         const g = make(
           'g',
-          { class: 'mapper-ext' + (e.target ? ' linked' : ''), 'data-ext': i },
+          {
+            class: 'mapper-ext' + (e.target ? ' linked' : '') + (compass ? '' : ' off-plane'),
+            'data-ext': i,
+          },
           marks,
         );
         make(
@@ -359,7 +383,8 @@
       html('strong', { textContent: loc.name }, head);
       html('span', { className: 'maps-meta', textContent: `Level ${loc.z}` }, head);
       const exits = loc.exits.filter((e) => byId[e.to]);
-      if (exits.length) {
+      const outer = (map.external || []).filter((e) => e.from === loc.id);
+      if (exits.length || outer.length) {
         const ul = html('ul', { className: 'mapper-exits' }, els.info);
         exits.forEach((e) => {
           const li = html('li', {}, ul);
@@ -373,6 +398,20 @@
             html('span', { className: 'mapper-dir', textContent: `${dirOf(e.dir)}: ` }),
             b,
           );
+        });
+        outer.forEach((e) => {
+          const li = html('li', {}, ul);
+          html('span', { className: 'mapper-dir', textContent: `${dirOf(e.dir)}: ` }, li);
+          if (e.target) {
+            const b = html(
+              'button',
+              { type: 'button', className: 'mapper-link', textContent: exitPlace(e) },
+              li,
+            );
+            b.addEventListener('click', () => clickExternal(map.external.indexOf(e)));
+          } else {
+            html('span', { textContent: exitPlace(e) }, li);
+          }
         });
       }
     }
@@ -430,7 +469,8 @@
       text = loc.name;
     } else if (stub) {
       const e = map.external[+stub.getAttribute('data-ext')];
-      text = `To ${exitPlace(e)}`;
+      const d = dirOf(e.dir);
+      text = COMPASS[d] ? `To ${exitPlace(e)}` : `${d} to ${exitPlace(e)}`;
     }
     if (!text) {
       els.tip.hidden = true;

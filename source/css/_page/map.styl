@@ -27,6 +27,7 @@ $worldmap-font = Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospa
   --map-line #8b8677
   --map-ink #2a2923
   --map-accent #2d96bd
+  --map-off-plane #c0512f
   display flex
   flex-direction column
   gap 0.6em
@@ -189,6 +190,11 @@ $worldmap-font = Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospa
     cursor pointer
     .dot
       fill var(--map-accent)
+  &.off-plane
+    .stub, .dot
+      stroke var(--map-off-plane)
+    &.linked .dot
+      fill var(--map-off-plane)
 
 // the selected location: one type size for everything in it, the secondary
 // text only lighter, not smaller
