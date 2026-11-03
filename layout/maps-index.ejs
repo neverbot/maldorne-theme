@@ -14,15 +14,22 @@
             </ul>
             <% } else { %>
             <p><a href="<%- url_for(page.parent.url) %>">All maps</a></p>
+            <% if (page.world) { %>
+            <a class="maps-world" href="<%- url_for(page.world.url) %>">
+                <pre aria-hidden="true"><% page.world.preview.forEach(function (row) { row.forEach(function (run) { %><span style="<%= run.color ? 'color:' + run.color : '' %><%= run.bold ? ';font-weight:bold' : '' %>"><%= run.text %></span><% }); %>
+<% }); %></pre>
+                <span class="maps-world-text">
+                    <span class="maps-world-name">World map</span>
+                    <span class="maps-world-note">The whole world on one map, <%= page.world.levels %> <%= page.world.levels === 1 ? 'level' : 'levels' %> deep.</span>
+                </span>
+            </a>
+            <h3>Areas</h3>
+            <% } %>
             <ul class="maps-list">
                 <% page.entries.forEach(function (m) { %>
                 <li>
                     <a href="<%- url_for(m.url) %>"><%= m.name %></a>
-                    <% if (m.world) { %>
-                    <span class="maps-meta"><%= m.levels %> <%= m.levels === 1 ? 'level' : 'levels' %></span>
-                    <% } else { %>
                     <span class="maps-meta"><%= m.locations %> locations, <%= m.levels %> <%= m.levels === 1 ? 'level' : 'levels' %>, <%= m.areas %> <%= m.areas === 1 ? 'area' : 'areas' %></span>
-                    <% } %>
                 </li>
                 <% }); %>
             </ul>

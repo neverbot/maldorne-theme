@@ -13,6 +13,52 @@ $worldmap-font = Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospa
   .maps-meta
     float right
 
+.post-content .maps-world
+  display flex
+  align-items center
+  gap 2.5em
+  overflow hidden
+  margin 1.5em 0
+  padding 1.5em 2em
+  background #111111
+  color #e5e5e5
+  text-decoration none
+  &:hover, &:focus-visible
+    background #1b1b1b
+    .maps-world-name
+      color #5fb8d9
+      text-decoration none
+  pre
+    flex none
+    overflow hidden
+    margin 0
+    padding 0
+    background none
+    border 0
+    color #aaaaaa
+    font 7px/7px $worldmap-font
+  .maps-world-text
+    display flex
+    flex-direction column
+    gap 0.3em
+  .maps-world-name
+    font-family $display-font-family
+    font-size 2em
+    line-height 1.1
+    text-decoration underline
+    text-decoration-thickness 1px
+    text-underline-offset 0.15em
+  .maps-world-note
+    color #aaaaaa
+    font-size 0.85em
+
+@media screen and (max-width: 700px)
+  .post-content .maps-world
+    flex-direction column
+    align-items flex-start
+    gap 1em
+    padding 1.2em
+
 .map-page
   .map-title
     margin-bottom 0
