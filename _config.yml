@@ -122,7 +122,7 @@ time_format: HH:mm:ss
 stylesheets:
   - /css/style.css
 
-# scripts loaded in the end of the body
+# scripts loaded deferred from the <head>, in order, before DOMContentLoaded
 scripts:
   - /js/tocbot.min.js
   - /js/navbar.js
