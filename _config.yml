@@ -118,6 +118,11 @@ page_title_enable: true
 date_format: MMMM D, YYYY
 time_format: HH:mm:ss
 
+# video player, self-hosted under source/vendor/plyr-<version>/ (plyr.min.js,
+# plyr.css, plyr.svg and blank.mp4, from https://cdn.plyr.io/<version>/)
+plyr:
+  version: 3.8.4
+
 # stylesheets loaded in the <head>
 stylesheets:
   - /css/style.css
