@@ -47,3 +47,12 @@
 @import "_timeline/timeline.styl"
 @import "_badge/badge.styl"
 @import "_hovertext/hovertext.styl"
+
+// cross-document view transitions: a short cross-fade between pages
+@css {
+  @media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+      navigation: auto;
+    }
+  }
+}
