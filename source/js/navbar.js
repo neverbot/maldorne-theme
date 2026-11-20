@@ -80,6 +80,22 @@ function closeDropdown() {
   });
 }
 
+// close the open dropdown with Escape, giving the focus back to its button
+document.addEventListener('keydown', function (e) {
+  if (e.key !== 'Escape') return;
+  const open = document.querySelector('.menu-dropdown-container.dropdown-open');
+  if (!open) return;
+  closeDropdown();
+  open.querySelector('.menu-dropdown-toggle').focus();
+});
+
+// close the dropdown when the keyboard focus leaves it
+document.querySelectorAll('.menu-dropdown-container').forEach(function (container) {
+  container.addEventListener('focusout', function (e) {
+    if (e.relatedTarget && !container.contains(e.relatedTarget)) closeDropdown();
+  });
+});
+
 // close the dropdown on mouse out from the dropdown list
 document.querySelectorAll('.menu-dropdown-options').forEach(function (dropDownList) {
   // close the dropdown after user leave the list
