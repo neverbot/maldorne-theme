@@ -45,10 +45,10 @@
 
   <section class="post-content">
     <% if ((is_home() || is_archive() || is_tag() || is_category()) && post.excerpt) { %>
-      <%- post.excerpt %>
+      <%- typeof lazy !== 'undefined' && lazy ? lazy_images(post.excerpt) : post.excerpt %>
       <p class="read-more"><a href="<%- url_for(post.path) %>"><%- __('read_more') %> →</a></p>
     <% } else { %>
-      <%- post.content %>
+      <%- typeof lazy !== 'undefined' && lazy ? lazy_images(post.content) : post.content %>
     <% } %>
   </section>
 

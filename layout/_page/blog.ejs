@@ -1,14 +1,14 @@
 <div class="post-wrap archive">
-    <% page.posts.each(function (post) { %>
+    <% page.posts.each(function (post, i) { %>
 
       <% const tags = post.tags.toArray().map((item) => { return item.name; }); %>
       <% if (post.tags && tags.includes('miniblog')) { %>
 
-        <%- partial('_partial/miniblog', { post }) %>
+        <%- partial('_partial/miniblog', { post, lazy: i > 0 }) %>
 
       <% } else { %>
 
-        <%- partial('_partial/post', { post }) %>
+        <%- partial('_partial/post', { post, lazy: i > 0 }) %>
 
       <% } %>
 
